@@ -3,14 +3,14 @@ The following markdown document is a checklist of items you **should** complete 
 
 ## Git & Project Access
 - [ ] **GitLab**: Commits (as shown in the Git commit history) using your own account. Failing to do this may result in zero marks.
-- [ ] **GitLab**: Have the relevant marking tutors as 'maintainers' for your repository.
+- [ ] **GitLab**: Have the relevant marking tutors as 'maintainers' for your repository. (Note: this may be automatically done by us instead. Will update on week 10 if necessary)
 - [ ] The markers will be able to login to your **App** via the APK using either of the 2 sets of accounts in the assignment specification.
 - [ ] If **Firebase** has been used, you have added the Marker's email to your Firebase project, and included the link to your Firebase project in your report.
 
 ## Documents (all non-android files) located in a folder named `items`
 - [ ] A conflict resolution protocol is documented and well-defined.
 - [ ] All Team Meeting Minutes (at least 4, with links in the report). 
-- [ ] Create ONE video titled  `features.(mp4|mov)` that demonstrates each implemented feature (basic + general), in the same order as listed in the report. Max. 4 minutes.
+- [ ] Create ONE video titled  `features.(mp4|mov)` that demonstrates each implemented feature (basic + general), in the same order as listed in the report. Max. 3 minutes.
 - [ ] A working standalone **APK** that can be loaded and execute correctly on an AVD (see [demo video](media/_examples/COMP2100APKGenerationGroupAssignment.mp4)).
 - [ ] **Report**: Completed the markdown report document titled [report.md](report.md).
 - [ ] **Statement of Originality**: All members have read and signed the [statement of originality](statement-of-originality.yml). Failure to do so will result in zero marks.
@@ -35,8 +35,7 @@ in the templates for both report and meeting minutes before submitting.
 
 ## Individual Reflections
 Please note that each member must complete their individual submissions for the following items on Wattle (same due date as the project submission).
-- [ ] All members have submitted their 100 to 120 word individual reflections related to their experience during the group project.
-- [ ] All members have submitted their peer- and self-evaluation as instructed on Wattle.
+- [ ] All members have submitted their peer- and self-evaluation and individual reflection as instructed on Wattle.
 
 ## Helpful (Optional)
 The following are some optional items that are conducive to your final marks. These are not necessary for your final submission but will assist in achieving a higher overall mark. Feel free to add additional items here for your own team to keep track of!
