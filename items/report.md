@@ -12,7 +12,7 @@ Note that you should have removed ALL TEMPLATE/INSTRUCTION textes in your submis
 
 * *Try to make your report `well structured`, which is easier for the reviewers to capture the necessary information.*
 
-*We give instructions enclosed in square brackets [...] and examples for each sections to demonstrate what are expected for your project report. Note that they only provide part of the skeleton and your description should be more content-rich.*
+*We give instructions enclosed in square brackets [...] and examples for each sections to demonstrate what are expected for your project report. Note that they only provide part of the skeleton and your description should be more content-rich. Quick references about markdown by [CommonMark](https://commonmark.org/help/)*
 
 ## Table of Contents
 
