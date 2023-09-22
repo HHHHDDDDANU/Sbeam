@@ -13,23 +13,19 @@ Stand up Procedure:
 
 
 ## Agenda Items
-| Number   |        Item |
-|:---------|------------:|
-| 1 | basic features implement |
-| 2 | extended features |
+| Number |                     Item |
+|:-------|-------------------------:|
+| 1      | basic features implement |
+| 2      |        extended features |
+| 3      |         work allocations |
 
 ## Meeting Minutes
-- [Summary of the progress reports, discussions, decisions, and matters to be confirmed from the meeting.]
-- ...
-- ...
-
+- The content and functionality of the application is defined, as well as the features considered for implementation.
 
 ## Action Items
 | Task                                   | Assigned To |  Due Date  |
 |:---------------------------------------|:-----------:|:----------:|
-| [Task 1]                               |  [Name 1]   | [Due Date] |
-| [Task 2]                               |  [Name 2]   | [Due Date] |
-| [Task 3]                               |  [Name 3]   | [Due Date] |
+| basic features implement               |     All     |   Sep 25   |
 
 
 
@@ -37,7 +33,7 @@ Stand up Procedure:
 The following dictates who will scribe in this and the next meeting.
 | Name |
 | :---: |
-| [Member name] |
-| [Member name] |
-| [Member name] |
-| [Member name] |
+| Connor Li |
+| Simon Fu |
+| Yongsong Xiao |
+| Zehua Liu |
