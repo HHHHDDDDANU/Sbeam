@@ -1,7 +1,7 @@
 # G27
 This following is a very simple team meeting template. You should expand it based on the scope and nature of your discussion.
 
-## Team Meeting 1 - Week 6 - Sep 17th
+## Team Meeting 1 - Week 7 - Sep 21th
 **Absent:**
 None
 <br>
