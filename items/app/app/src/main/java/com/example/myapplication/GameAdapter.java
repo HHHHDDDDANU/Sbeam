@@ -26,7 +26,6 @@ public class GameAdapter extends ArrayAdapter<Game> {
         TextView nameTextView = convertView.findViewById(android.R.id.text1);
         Game game = getItem(position);
 
-        // 设置要显示的属性
         if (game != null) {
             nameTextView.setText(game.getName());
         }
