@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Starfield",
+    "year": 2023,
+    "producer": "Bethesda Softworks",
+    "review": 75
+  },
+  {
+    "name": "Elden Ring",
+    "year": 2022,
+    "producer": "FromSoftware",
+    "review": 93
+  },
+  {
+    "name": "Cyberpunk 2077",
+    "year": 2020,
+    "producer": "CD PROJECT RED",
+    "review": 80
+  }
+
+]
