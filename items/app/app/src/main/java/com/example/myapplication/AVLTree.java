@@ -137,22 +137,5 @@ public class AVLTree {
             return searchByName(node.right, targetName);
     }
 
-    public static void main(String[] args) {
-        AVLTree tree = new AVLTree();
-        tree.insert("Mass Effect: Legendary Edition", 2021, "BioWare", 90, 60);
-        tree.insert("The Witcher 3: Wild Hunt", 2015, "CD Projekt Red", 95, 40);
-        tree.insert("Red Dead Redemption 2", 2018, "Rockstar Games", 97, 50);
 
-        System.out.println("Inorder traversal:");
-        tree.inorder();
-
-        String targetName = "The Witcher 3: Wild Hunt";
-        AVLNode result = tree.searchByName(targetName);
-        if (result != null) {
-            System.out.println("Found: Name: " + result.name + ", Year: " + result.year + ", Producer: " + result.producer
-                    + ", Review: " + result.review + ", Price: " + result.price);
-        } else {
-            System.out.println("Not found: " + targetName);
-        }
-    }
 }
