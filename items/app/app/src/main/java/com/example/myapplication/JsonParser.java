@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import com.google.gson.Gson;
@@ -13,7 +14,6 @@ import com.google.gson.reflect.TypeToken;
 public class JsonParser {
     public static ArrayList<Game> parseJsonFromAssets(Context context, String fileName) {
         AssetManager assetManager = context.getAssets();
-
         try {
             InputStream inputStream = assetManager.open(fileName);
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));

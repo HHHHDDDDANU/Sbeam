@@ -5,11 +5,14 @@ public class Game {
     private int year;
     private String producer;
     private int review;
-    public Game(String name, int year, String producer, int review){
+
+    private int price;
+    public Game(String name, int year, String producer, int review,int price){
         this.name=name;
         this.year=year;
         this.producer=producer;
         this.review=review;
+        this.price=price;
     }
     public String getName() {
         return name;
@@ -41,6 +44,13 @@ public class Game {
 
     public void setReview(int review) {
         this.review = review;
+    }
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }
 

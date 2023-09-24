@@ -3,19 +3,57 @@
     "name": "Starfield",
     "year": 2023,
     "producer": "Bethesda Softworks",
-    "review": 75
+    "review": 75,
+    "price": 70
   },
   {
     "name": "Elden Ring",
     "year": 2022,
     "producer": "FromSoftware",
-    "review": 93
+    "review": 93,
+    "price": 50
   },
   {
     "name": "Cyberpunk 2077",
     "year": 2020,
     "producer": "CD PROJECT RED",
-    "review": 80
+    "review": 80,
+    "price": 59
+  },
+  {
+    "name": "Stellaris",
+    "year": 2016,
+    "producer": "Paradox Interactive",
+    "review": 88,
+    "price": 90
+  },
+  {
+    "name": "Battlefield 2042",
+    "year": 2021,
+    "producer": "Electronic Art",
+    "review": 40,
+    "price": 56
+  },
+  {
+    "name": "Grand Theft Auto V",
+    "year": 2015,
+    "producer": "Rockstar Games",
+    "review": 91,
+    "price": 67
+  },
+  {
+    "name": "Red Dead Redemption2",
+    "year": 2019,
+    "producer": "Rockstar Games",
+    "review": 90,
+    "price": 90
+  },
+  {
+    "name": "Baldur's Gate 3",
+    "year": 2023,
+    "producer": "Larian Studios",
+    "review": 95,
+    "price": 45
   }
 
 ]
