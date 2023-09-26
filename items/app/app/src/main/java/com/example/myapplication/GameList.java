@@ -18,20 +18,22 @@ import java.util.ArrayList;
 public class GameList extends AppCompatActivity {
     GameAdapter adapter;
     public ArrayList<Game> games;
+    public AVLTree gameTree;
     ArrayList<Game> originalGames;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_list);
-        ListView listView=findViewById(R.id.gameList);
-        games=JsonParser.parseJsonFromAssets(this,"data.json");
+        ListView listView = findViewById(R.id.gameList);
+        games = JsonParser.parseJsonFromAssets(this,"data.json");
+        //gameTree = JsonParser.parseJsonToAVLTree(this,"data.json");
         originalGames = new ArrayList<>(games);
         adapter=new GameAdapter(this,games);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent=new Intent(getApplicationContext(),GameDetails.class);
+                Intent intent = new Intent(getApplicationContext(),GameDetails.class);
                 intent.putExtra("name", games.get(position).getName());
                 intent.putExtra("publisher", games.get(position).getProducer());
                 intent.putExtra("year", games.get(position).getYear());
@@ -58,5 +60,9 @@ public class GameList extends AppCompatActivity {
         games.clear();
         games.addAll(matchedGames);
         adapter.notifyDataSetChanged();
+    }
+
+    public void searchInTree(){
+
     }
 }

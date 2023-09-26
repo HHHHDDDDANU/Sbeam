@@ -36,4 +36,35 @@ public class JsonParser {
             return null;
         }
     }
+
+    public static AVLTree parseJsonToAVLTree(Context context, String fileName){
+        AssetManager assetManager = context.getAssets();
+        try {
+            InputStream inputStream = assetManager.open(fileName);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder stringBuilder = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+
+            String jsonString = stringBuilder.toString();
+
+            Gson gson = new Gson();
+            Type listType = new TypeToken<ArrayList<Game>>() {}.getType();
+            ArrayList<Game> gameList = gson.fromJson(jsonString, listType);
+
+            AVLTree avlTree = new AVLTree();
+            for(Game game : gameList){
+                avlTree.insert(game);
+            }
+
+            return avlTree;
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

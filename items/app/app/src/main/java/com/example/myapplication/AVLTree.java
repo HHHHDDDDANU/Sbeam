@@ -1,25 +1,15 @@
 package com.example.myapplication;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+
 
 public class AVLTree {
-    private class AVLNode {
-        public String name;
-        public int year;
-        public String producer;
-        public int review;
-        public int price;
+    public class AVLNode {
+        public Game game;
         public AVLNode left;
         public AVLNode right;
         public int height;
 
-        public AVLNode(String name, int year, String producer, int review, int price) {
-            this.name = name;
-            this.year = year;
-            this.producer = producer;
-            this.review = review;
-            this.price = price;
+        public AVLNode(Game game) {
+            this.game = game;
             this.left = null;
             this.right = null;
             this.height = 1;
@@ -76,35 +66,35 @@ public class AVLTree {
         return y;
     }
 
-    public void insert(String name, int year, String producer, int review, int price) {
-        root = insert(root, name, year, producer, review, price);
+    public void insert(Game game) {
+        root = insert(root, game);
     }
 
-    private AVLNode insert(AVLNode node, String name, int year, String producer, int review, int price) {
+    private AVLNode insert(AVLNode node, Game game) {
         if (node == null)
-            return new AVLNode(name, year, producer, review, price);
+            return new AVLNode(game);
 
-        if (price < node.price)
-            node.left = insert(node.left, name, year, producer, review, price);
+        if (game.getPrice() < node.game.getPrice())
+            node.left = insert(node.left, game);
         else
-            node.right = insert(node.right, name, year, producer, review, price);
+            node.right = insert(node.right, game);
 
         updateHeight(node);
 
         int balance = getBalance(node);
 
-        if (balance > 1 && price < node.left.price)
+        if (balance > 1 && game.getPrice() < node.left.game.getPrice())
             return rotateRight(node);
 
-        if (balance < -1 && price > node.right.price)
+        if (balance < -1 && game.getPrice() > node.right.game.getPrice())
             return rotateLeft(node);
 
-        if (balance > 1 && price > node.left.price) {
+        if (balance > 1 && game.getPrice() > node.left.game.getPrice()) {
             node.left = rotateLeft(node.left);
             return rotateRight(node);
         }
 
-        if (balance < -1 && price < node.right.price) {
+        if (balance < -1 && game.getPrice() < node.right.game.getPrice()) {
             node.right = rotateRight(node.right);
             return rotateLeft(node);
         }
@@ -121,8 +111,8 @@ public class AVLTree {
             return;
 
         inorder(node.left);
-        System.out.println("Name: " + node.name + ", Year: " + node.year + ", Producer: " + node.producer
-                + ", Review: " + node.review + ", Price: " + node.price);
+        System.out.println("Name: " + node.game.getName() + ", Year: " + node.game.getYear() + ", Producer: " + node.game.getProducer()
+                + ", Review: " + node.game.getReview() + ", Price: " + node.game.getPrice());
         inorder(node.right);
     }
 
@@ -131,10 +121,10 @@ public class AVLTree {
     }
 
     private AVLNode searchByName(AVLNode node, String targetName) {
-        if (node == null || node.name.equals(targetName))
+        if (node == null || node.game.getName().equals(targetName))
             return node;
 
-        if (targetName.compareTo(node.name) < 0)
+        if (targetName.compareTo(node.game.getName()) < 0)
             return searchByName(node.left, targetName);
         else
             return searchByName(node.right, targetName);
