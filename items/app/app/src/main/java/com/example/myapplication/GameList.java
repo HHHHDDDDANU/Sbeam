@@ -18,12 +18,14 @@ import java.util.ArrayList;
 public class GameList extends AppCompatActivity {
     GameAdapter adapter;
     public ArrayList<Game> games;
+    ArrayList<Game> originalGames;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_list);
         ListView listView=findViewById(R.id.gameList);
         games=JsonParser.parseJsonFromAssets(this,"data.json");
+        originalGames = new ArrayList<>(games);
         adapter=new GameAdapter(this,games);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -38,5 +40,23 @@ public class GameList extends AppCompatActivity {
             }
         });
     }
+    public void performSearch(View view) {
+        System.out.println("Clicked");
+        EditText searchEditText = findViewById(R.id.serachContent);
+        System.out.println(searchEditText);
+        String criteria = searchEditText.getText().toString();
 
+        Tokenizer tokenizer = new Tokenizer(criteria);
+
+        ArrayList<Game> matchedGames = new ArrayList<>();
+        for (Game game : originalGames) {
+            if (tokenizer.matches(game)) {
+                matchedGames.add(game);
+            }
+        }
+
+        games.clear();
+        games.addAll(matchedGames);
+        adapter.notifyDataSetChanged();
+    }
 }
