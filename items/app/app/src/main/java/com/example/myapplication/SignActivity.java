@@ -23,7 +23,6 @@ public class SignActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
-                    // 设置选项卡标题
                     switch (position) {
                         case 0:
                             tab.setText("Login");

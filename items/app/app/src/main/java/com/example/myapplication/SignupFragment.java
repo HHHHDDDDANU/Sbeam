@@ -37,13 +37,13 @@ public class SignupFragment extends Fragment {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        // Sign in success, update UI with the signed-in user's information.
+                                        // Sign in success
                                         Toast.makeText(getActivity(), "Sign up successfully", Toast.LENGTH_SHORT).show();
                                         username.setText("");
                                         password.setText("");
                                         confirm.setText("");
                                     } else {
-                                        // If sign in fails, display a message to the user.
+                                        // If sign in fails
                                         Toast.makeText(getActivity(), "Authentication failed.", Toast.LENGTH_SHORT).show();
                                     }
                                 }

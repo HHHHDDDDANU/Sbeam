@@ -36,11 +36,11 @@ public class LoginFragment extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
+                                    // Sign in success
                                     Intent intent=new Intent(getActivity(),GameList.class);
                                     startActivity(intent);
                                 } else {
-                                    // If sign in fails, display a message to the user.
+                                    // If sign in fails
                                     Toast.makeText(getActivity(), "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
