@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "693564685390",
+    "project_id": "comp6442database",
+    "storage_bucket": "comp6442database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693564685390:android:ed6873a7cefe0a0fc7971f",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs1uyi-7MTYUbwWyTzDCgWObdGjtiZHtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
