@@ -9,14 +9,15 @@
         android:id="@+id/signup_userName"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:hint=" User Name"
+        android:hint="User Name"
         android:inputType="text"
         android:background="@drawable/edittext_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.2"
+        android:paddingLeft="10dp"/>
 
     <EditText
         android:id="@+id/signup_passWord"
@@ -24,12 +25,13 @@
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint=" Password"
+        android:hint="Password"
         android:inputType="textPassword"
         android:background="@drawable/edittext_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_userName" />
+        app:layout_constraintTop_toBottomOf="@+id/signup_userName"
+        android:paddingLeft="10dp"/>
 
     <EditText
         android:id="@+id/signup_confirmPassWord"
@@ -37,13 +39,14 @@
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint=" confirm Password"
+        android:hint="Confirm Password"
         android:inputType="textPassword"
         android:background="@drawable/edittext_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_passWord" />
+        app:layout_constraintTop_toBottomOf="@+id/signup_passWord"
+        android:paddingLeft="10dp"/>
 
     <Button
         android:id="@+id/signup_button"

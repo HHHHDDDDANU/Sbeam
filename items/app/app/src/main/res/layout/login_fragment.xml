@@ -10,25 +10,27 @@
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:background="@drawable/edittext_bg"
-        android:hint=" User Name"
+        android:hint="User Name"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.2"
+        android:paddingLeft="10dp"/>
 
     <EditText
         android:id="@+id/login_passWord"
         android:layout_width="250dp"
         android:layout_height="60dp"
         android:layout_marginTop="25dp"
-        android:hint=" Password"
+        android:hint="Password"
         android:inputType="textPassword"
         android:background="@drawable/edittext_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_userName" />
+        app:layout_constraintTop_toBottomOf="@+id/login_userName"
+        android:paddingLeft="10dp"/>
 
     <Button
         android:id="@+id/login_button"
