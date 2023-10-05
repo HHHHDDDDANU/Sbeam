@@ -1,6 +1,7 @@
 package com.example.myapplication;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.ArrayList;
 
 
 public class AVLTree {
@@ -123,6 +124,23 @@ public class AVLTree {
                 + ", Review: " + node.game.getReview() + ", Price: " + node.game.getPrice() + "height: " + node.height);
         inorder(node.right);
     }
+
+    public ArrayList<Game> preorderToList() {
+        ArrayList<Game> gameList = new ArrayList<>();
+        preorderToList(root, gameList);
+        return gameList;
+    }
+
+    private void preorderToList(AVLNode node, ArrayList<Game> gameList) {
+        if (node == null)
+            return;
+
+        gameList.add(node.game); // 将当前节点添加到ArrayList中
+
+        preorderToList(node.left, gameList);
+        preorderToList(node.right, gameList);
+    }
+
 
     public void printTreeStructure() {
         if (root == null) {

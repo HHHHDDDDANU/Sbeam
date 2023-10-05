@@ -13,13 +13,19 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".MainInterface"
-            android:windowSoftInputMode="adjustPan"
+            android:name=".UserAdapter"
             android:exported="false" />
         <activity
-            android:name=".SignActivity"
-            android:windowSoftInputMode="adjustPan"
+            android:name=".ChatActivity"
             android:exported="false" />
+        <activity
+            android:name=".MainInterface"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".SignActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".GameDetails"
             android:exported="false" />
