@@ -28,7 +28,7 @@ public class GameListFragment extends Fragment {
         View root=inflater.inflate(R.layout.gamelist_fragment,container,false);
         ListView listView = root.findViewById(R.id.game_list);
         games = JsonParser.parseJsonFromAssets(getContext(),"data.json");
-        //gameTree = JsonParser.parseJsonToAVLTree(this,"data.json");
+        gameTree = JsonParser.parseJsonToAVLTree(getContext(),"data.json");
         originalGames = new ArrayList<>(games);
         adapter=new GameAdapter(getContext(),games);
         listView.setAdapter(adapter);
