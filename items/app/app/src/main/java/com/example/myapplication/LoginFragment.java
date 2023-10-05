@@ -37,7 +37,7 @@ public class LoginFragment extends Fragment {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success
-                                    Intent intent=new Intent(getActivity(),GameList.class);
+                                    Intent intent=new Intent(getActivity(), MainInterface.class);
                                     startActivity(intent);
                                 } else {
                                     // If sign in fails
