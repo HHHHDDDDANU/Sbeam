@@ -135,7 +135,7 @@ public class AVLTree {
         if (node == null)
             return;
 
-        gameList.add(node.game); // 将当前节点添加到ArrayList中
+        gameList.add(node.game);
 
         preorderToList(node.left, gameList);
         preorderToList(node.right, gameList);
