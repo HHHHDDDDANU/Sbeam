@@ -1,4 +1,6 @@
 package com.example.myapplication;
+import java.util.LinkedList;
+import java.util.Queue;
 
 
 public class AVLTree {
@@ -41,6 +43,8 @@ public class AVLTree {
     }
 
     private AVLNode rotateRight(AVLNode y) {
+
+        //System.out.println("balence: " + getBalance(y));
         AVLNode x = y.left;
         AVLNode T2 = x.right;
 
@@ -54,8 +58,11 @@ public class AVLTree {
     }
 
     private AVLNode rotateLeft(AVLNode x) {
+
+        //System.out.println("balence: " + getBalance(x));
         AVLNode y = x.right;
         AVLNode T2 = y.left;
+        //if(y == null) inorder(x);
 
         y.left = x;
         x.right = T2;
@@ -86,19 +93,21 @@ public class AVLTree {
         if (balance > 1 && game.getPrice() < node.left.game.getPrice())
             return rotateRight(node);
 
-        if (balance < -1 && game.getPrice() > node.right.game.getPrice())
+        if (balance < -1 && game.getPrice() >= node.right.game.getPrice()){
+            if(node.right == null) System.out.println("FFFFFFFFFFFFFFFFFF");
             return rotateLeft(node);
+        }
 
-        if (balance > 1 && game.getPrice() > node.left.game.getPrice()) {
+        if (balance > 1 && game.getPrice() >= node.left.game.getPrice()) {
             node.left = rotateLeft(node.left);
             return rotateRight(node);
         }
 
         if (balance < -1 && game.getPrice() < node.right.game.getPrice()) {
             node.right = rotateRight(node.right);
+            if(node.right == null) System.out.println("RRRRRRRRRRRRRRRRRR");
             return rotateLeft(node);
         }
-
         return node;
     }
 
@@ -107,13 +116,39 @@ public class AVLTree {
     }
 
     private void inorder(AVLNode node) {
+
         if (node == null)
             return;
 
         inorder(node.left);
         System.out.println("Name: " + node.game.getName() + ", Year: " + node.game.getYear() + ", Producer: " + node.game.getProducer()
-                + ", Review: " + node.game.getReview() + ", Price: " + node.game.getPrice());
+                + ", Review: " + node.game.getReview() + ", Price: " + node.game.getPrice() + "height: " + node.height);
         inorder(node.right);
+    }
+
+    public void printTreeStructure() {
+        if (root == null) {
+            System.out.println("The tree is empty.");
+            return;
+        }
+
+        Queue<AVLNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            for (int i = 0; i < levelSize; i++) {
+                AVLNode node = queue.poll();
+                System.out.print("price: " + node.game.getPrice() + " balance: " + getBalance(node) + ", ");
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            System.out.println();
+        }
     }
 
     public AVLNode searchByName(String targetName) {
