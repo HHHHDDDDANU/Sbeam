@@ -135,7 +135,7 @@ public class AVLTree {
         if (node == null)
             return;
 
-        gameList.add(node.game); // 将当前节点添加到ArrayList中
+        gameList.add(node.game);
 
         preorderToList(node.left, gameList);
         preorderToList(node.right, gameList);
@@ -179,6 +179,90 @@ public class AVLTree {
             return searchByName(node.left, targetName);
         else
             return searchByName(node.right, targetName);
+    }
+
+//
+//    // Search by price requirement.
+//    public ArrayList<Game> findGamesByPrice(int price, String operator) {
+//        ArrayList<Game> adjustedList = new ArrayList<>();
+////        findGamesByPrice(root, price, operator, adjustedList);
+//        AVLNode index = root;
+//        if (index != null) {
+//            if (operator.equals("<")) {
+//                if
+//            }
+//            else if (operator.charAt(0) == '>') {
+//
+//            }
+//        }
+//
+//        return adjustedList;
+//    }
+//
+//    private void findGamesByPrice(AVLNode node, int price, String operator, ArrayList<Game> adjustedList) {
+//        if (node == null)
+//            return;
+//
+//        if (operator.equals("<")) {
+//
+//        }
+//        else if (operator.charAt(0) == '>') {
+//
+//        }
+//
+//        findGamesByPrice(node.left, price, operator, adjustedList);
+//
+//        // Add condition check here and add to list if it satisfies the condition
+//        if ((operator.equals("less") && node.game.getPrice() < price) ||
+//                (operator.equals("greater") && node.game.getPrice() > price)) {
+//            adjustedList.add(node.game);
+//        }
+//
+//        findGamesByPrice(node.right, price, operator, adjustedList);
+//    }
+
+
+    // Try again god damn it please god no please
+    public ArrayList<Game> inorderToList(int price, String operator) {
+        ArrayList<Game> sortedList = new ArrayList<>();
+        inorderToList(root, sortedList, price, operator);
+        return sortedList;
+    }
+
+    private void inorderToList(AVLNode node, ArrayList<Game> list, int price, String operator) {
+        if (node == null)
+            return;
+
+        if (operator.equals("<")) {
+            if (node.game.getPrice() >= price) {
+                inorderToList(node.left, list, price, operator);
+            }
+            else {
+                inorderToList(node.left, list, price, operator);
+                list.add(node.game);
+                inorderToList(node.right, list, price, operator);
+            }
+        }
+        else if (operator.equals(">")) {
+            if (node.game.getPrice() <= price) {
+                inorderToList(node.right, list, price, operator);
+            }
+            else {
+                inorderToList(node.left, list, price, operator);
+                list.add(node.game);
+                inorderToList(node.right, list, price, operator);
+            }
+        }
+        else if (operator.equals("<=")) {
+            if (node.game.getPrice() > price) {
+                inorderToList(node.right, list, price, operator);
+            }
+            else {
+                inorderToList(node.left, list, price, operator);
+                list.add(node.game);
+                inorderToList(node.right, list, price, operator);
+            }
+        }
     }
 
 
