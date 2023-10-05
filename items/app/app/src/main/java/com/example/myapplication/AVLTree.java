@@ -94,7 +94,6 @@ public class AVLTree {
             return rotateRight(node);
 
         if (balance < -1 && game.getPrice() >= node.right.game.getPrice()){
-            if(node.right == null) System.out.println("FFFFFFFFFFFFFFFFFF");
             return rotateLeft(node);
         }
 
@@ -105,7 +104,6 @@ public class AVLTree {
 
         if (balance < -1 && game.getPrice() < node.right.game.getPrice()) {
             node.right = rotateRight(node.right);
-            if(node.right == null) System.out.println("RRRRRRRRRRRRRRRRRR");
             return rotateLeft(node);
         }
         return node;
