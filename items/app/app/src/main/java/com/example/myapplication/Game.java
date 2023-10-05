@@ -1,12 +1,15 @@
 package com.example.myapplication;
 
-public class Game {
+import java.io.Serializable;
+
+public class Game implements Serializable {
     private String name;
     private int year;
     private String producer;
     private int review;
 
     private int price;
+    String url;
     public Game(String name, int year, String producer, int review,int price){
         this.name=name;
         this.year=year;
@@ -14,6 +17,9 @@ public class Game {
         this.review=review;
         this.price=price;
     }
+    public Game(){}
+
+
     public String getName() {
         return name;
     }
@@ -30,6 +36,10 @@ public class Game {
         return review;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -44,9 +54,6 @@ public class Game {
 
     public void setReview(int review) {
         this.review = review;
-    }
-    public int getPrice() {
-        return price;
     }
 
     public void setPrice(int price) {
