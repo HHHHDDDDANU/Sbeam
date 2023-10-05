@@ -26,7 +26,7 @@ public class GameList extends AppCompatActivity {
         setContentView(R.layout.activity_game_list);
         ListView listView = findViewById(R.id.gameList);
         games = JsonParser.parseJsonFromAssets(this,"data.json");
-        //gameTree = JsonParser.parseJsonToAVLTree(this,"data.json");
+        gameTree = JsonParser.parseJsonToAVLTree(this,"data.json");
         originalGames = new ArrayList<>(games);
         adapter=new GameAdapter(this,games);
         listView.setAdapter(adapter);
