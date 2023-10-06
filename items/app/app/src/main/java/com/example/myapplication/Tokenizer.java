@@ -20,12 +20,10 @@ public class Tokenizer {
 
     private void parseToken(String token) {
         if (token.startsWith("year")) {
-//            token.replace(" ", "");
             yearOperator = token.substring(4, 5);
             year = Integer.parseInt(token.substring(5).trim());
             System.out.println("year = " + year);
         } else if (token.startsWith("price")) {
-//            token.replace(" ", "");
             priceOperator = token.substring(5, 6);
             price = Integer.parseInt(token.substring(6).trim());
         } else {
@@ -33,7 +31,16 @@ public class Tokenizer {
         }
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public String getPriceOperator() {
+        return priceOperator;
+    }
+
     public boolean matches(Game game) {
+
         if (name != null && !game.getName().toLowerCase().contains(name.toLowerCase())) {
             return false;
         }
@@ -52,19 +59,19 @@ public class Tokenizer {
             }
         }
 
-        if (price != null) {
-            switch (priceOperator) {
-                case "=":
-                    if (game.getPrice() != price) return false;
-                    break;
-                case "<":
-                    if (game.getPrice() >= price) return false;
-                    break;
-                case ">":
-                    if (game.getPrice() <= price) return false;
-                    break;
-            }
-        }
+//        if (price != null) {
+//            switch (priceOperator) {
+//                case "=":
+//                    if (game.getPrice() != price) return false;
+//                    break;
+//                case "<":
+//                    if (game.getPrice() >= price) return false;
+//                    break;
+//                case ">":
+//                    if (game.getPrice() <= price) return false;
+//                    break;
+//            }
+//        }
 
         return true;
     }
