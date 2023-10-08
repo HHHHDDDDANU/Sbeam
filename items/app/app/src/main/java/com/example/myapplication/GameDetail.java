@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -50,7 +51,7 @@ public class GameDetail extends AppCompatActivity {
                 Log.w("Firebase", "loadPost:onCancelled", databaseError.toException());
             }
         });
-        // initiate widget
+        // get widget
         setContentView(R.layout.activity_game_detail);
         imageView=findViewById(R.id.detail_img);
         name=findViewById(R.id.detail_name);
@@ -73,6 +74,7 @@ public class GameDetail extends AppCompatActivity {
         description.setText(game.getDescription());
         price.setText("$"+game.getPrice());
         buyName.setText("Buy "+game.getName());
+        Glide.with(getApplicationContext()).load(game.getUrl()).into(imageView);
 
         // set add to wishlist button
         addToWishlist.setOnClickListener(new View.OnClickListener() {
@@ -89,9 +91,40 @@ public class GameDetail extends AppCompatActivity {
                 }
             }
         });
+        buy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (buyGame()){
+                    case 0:{
+                        FirebaseDatabase.getInstance().getReference().child("users").child(user.getUsername()).setValue(user);
+                        Toast.makeText(getApplicationContext(), "Purchased successfully!",
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                    case 1: Toast.makeText(getApplicationContext(), "You don't have enough money!", Toast.LENGTH_SHORT).show();break;
+                    case 2: Toast.makeText(getApplicationContext(), "you already own this game!", Toast.LENGTH_SHORT).show();break;
+                }
+            }
+        });
     }
-    public void buyGame(){
-
+    public int buyGame(){
+        if(user.getBalance()>=game.getPrice()){
+            ArrayList<Game> library;
+            user.setBalance(user.getBalance()-game.getPrice());
+            if(user.getLibrary()!=null){
+                library=user.getLibrary();
+                if(library.contains(game)){
+                    return 2;
+                }
+            }else {
+                library=new ArrayList<>();
+            }
+            library.add(game);
+            user.setLibrary(library);
+            return 0;
+        }else {
+            return 1;
+        }
     }
     // add game to the wishlist of the current user
     public boolean addToWishlist(){

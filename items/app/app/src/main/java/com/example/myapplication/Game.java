@@ -13,6 +13,7 @@ public class Game implements Serializable {
     private String type;
     private String description;
     private String url;
+    private String url_l;
     public Game(String name, int year, String producer, int review,int price){
         this.name=name;
         this.year=year;
@@ -98,6 +99,12 @@ public class Game implements Serializable {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+    public String getUrl_l() {
+        return url_l;
+    }
+    public void setUrl_l(String url_l) {
+        this.url_l = url_l;
     }
 }
 

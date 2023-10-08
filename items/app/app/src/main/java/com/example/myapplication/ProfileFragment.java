@@ -41,6 +41,7 @@ public class ProfileFragment extends Fragment {
     TextView balance;
     Button wishlist;
     Button signout;
+    Button library;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root=inflater.inflate(R.layout.profile_fragment,container,false);
         profile=root.findViewById(R.id.profile);
@@ -48,6 +49,7 @@ public class ProfileFragment extends Fragment {
         balance=root.findViewById(R.id.balance);
         wishlist=root.findViewById(R.id.button_wishlist);
         signout=root.findViewById(R.id.button_signout);
+        library=root.findViewById(R.id.button_library);
         String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users").child(uid);
         //save profile img to cloud
@@ -118,6 +120,14 @@ public class ProfileFragment extends Fragment {
                 uploadIMG.launch("image/*");
             }
         });
+        library.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(), MyLibrary.class);
+                startActivity(intent);
+            }
+        });
+
         return root;
     }
 }

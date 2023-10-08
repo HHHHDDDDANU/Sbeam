@@ -9,7 +9,7 @@
         android:id="@+id/wishlist_cons"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/purple"
+        android:background="#171D25"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -21,7 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:textColor="@color/white"
-            android:text="Wishlist"
+            android:text="WISHLIST"
             android:textStyle="bold"
             android:textSize="25sp"/>
         <ImageView
