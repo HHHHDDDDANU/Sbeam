@@ -24,16 +24,13 @@ public class SignActivity extends AppCompatActivity {
                 (tab, position) -> {
                     switch (position) {
                         case 0:
-                            tab.setText("Login");
+                            tab.setText("Log In");
                             break;
                         case 1:
-                            tab.setText("SingUp");
+                            tab.setText("Sign Up");
                             break;
                     }
                 }
         ).attach();
-//        tabLayout.setTranslationY(300);
-//        tabLayout.setAlpha(0);
-//        tabLayout.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(100).start();
     }
 }

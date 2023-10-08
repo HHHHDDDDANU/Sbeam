@@ -4,12 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A1974D"
-    tools:context=".MainActivity">
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:src="@drawable/main"
-    android:scaleType="centerCrop"/>
+    tools:context=".MyLibrary">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

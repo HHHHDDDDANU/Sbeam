@@ -16,7 +16,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.ktx.Firebase;
+
+import java.util.ArrayList;
 
 public class SignupFragment extends Fragment {
     EditText username,password,confirm;
@@ -38,6 +41,9 @@ public class SignupFragment extends Fragment {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success
+                                        String uid=FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                        User user=new User(uid,null,0,new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
+                                        FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(user);
                                         Toast.makeText(getActivity(), "Sign up successfully", Toast.LENGTH_SHORT).show();
                                         username.setText("");
                                         password.setText("");

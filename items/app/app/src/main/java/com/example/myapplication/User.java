@@ -8,15 +8,18 @@ public class User implements Serializable {
     private String profileUrl;
     private int balance;
     private ArrayList<Game> wishlist;
+
+    private ArrayList<Game> library;
     private ArrayList<User> friends;
     public User(){}
 
-    public User(String username, String profileUrl, int balance, ArrayList<Game> wishlist, ArrayList<User> friends) {
+    public User(String username, String profileUrl, int balance, ArrayList<Game> wishlist, ArrayList<User> friends,ArrayList<Game> library) {
         this.username = username;
         this.profileUrl = profileUrl;
         this.balance = balance;
         this.wishlist = wishlist;
         this.friends = friends;
+        this.library=library;
     }
 
     public String getUsername() {
@@ -57,5 +60,12 @@ public class User implements Serializable {
 
     public void setFriends(ArrayList<User> friends) {
         this.friends = friends;
+    }
+
+    public ArrayList<Game> getLibrary() {
+        return library;
+    }
+    public void setLibrary(ArrayList<Game> library) {
+        this.library = library;
     }
 }

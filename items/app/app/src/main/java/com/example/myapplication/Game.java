@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Game implements Serializable {
     private String name;
@@ -9,7 +10,9 @@ public class Game implements Serializable {
     private int review;
 
     private int price;
-    String url;
+    private String type;
+    private String description;
+    private String url;
     public Game(String name, int year, String producer, int review,int price){
         this.name=name;
         this.year=year;
@@ -58,6 +61,35 @@ public class Game implements Serializable {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Game game = (Game) o;
+        return year == game.year && review == game.review && price == game.price && Objects.equals(name, game.name) && Objects.equals(producer, game.producer) && Objects.equals(type, game.type) && Objects.equals(description, game.description) && Objects.equals(url, game.url);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, year, producer, review, price, type, description, url);
     }
 }
 
