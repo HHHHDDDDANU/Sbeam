@@ -7,14 +7,14 @@ public class User implements Serializable {
     private String username;
     private String profileUrl;
     private int balance;
-    private boolean status;
+    private int status;
     private ArrayList<Game> wishlist;
 
     private ArrayList<Game> library;
     private ArrayList<User> friends;
     public User(){}
 
-    public User(String username, String profileUrl, int balance, ArrayList<Game> wishlist, ArrayList<User> friends,ArrayList<Game> library) {
+    public User(String username, String profileUrl, int balance, int status,ArrayList<Game> wishlist, ArrayList<User> friends,ArrayList<Game> library) {
         this.username = username;
         this.profileUrl = profileUrl;
         this.balance = balance;
@@ -35,7 +35,7 @@ public class User implements Serializable {
     public int getBalance() {
         return balance;
     }
-    public boolean getStatus(){ return status;}
+    public int getStatus(){ return status;}
 
     public ArrayList<Game> getWishlist() {
         return wishlist;
@@ -56,7 +56,7 @@ public class User implements Serializable {
     public void setBalance(int balance) {
         this.balance = balance;
     }
-    public void setStatus(boolean status){ this.status = status;}
+    public void setStatus(int status){ this.status = status;}
 
     public void setWishlist(ArrayList<Game> wishlist) {
         this.wishlist = wishlist;

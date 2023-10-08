@@ -42,7 +42,7 @@ public class SignupFragment extends Fragment {
                                     if (task.isSuccessful()) {
                                         // Sign in success
                                         String uid=FirebaseAuth.getInstance().getCurrentUser().getUid();
-                                        User user=new User(uid,null,0,new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
+                                        User user=new User(uid,null,0,0,new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
                                         FirebaseDatabase.getInstance().getReference().child("users").child(uid).setValue(user);
                                         Toast.makeText(getActivity(), "Sign up successfully", Toast.LENGTH_SHORT).show();
                                         username.setText("");

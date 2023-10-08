@@ -38,7 +38,7 @@ public class FriendsListAdapter extends ArrayAdapter<User> {
         if (friend != null) {
             //friendPhotoImageView.setImageResource(friend.getPhotoResource());
             friendNameTextView.setText(friend.getUsername());
-            if (friend.getStatus()) {
+            if (friend.getStatus()==1) {
                 friendStatusTextView.setText("on line");
                 friendStatusTextView.setTextColor(context.getResources().getColor(R.color.green));
             } else {

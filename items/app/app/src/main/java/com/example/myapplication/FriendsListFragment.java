@@ -39,9 +39,9 @@ public class FriendsListFragment extends Fragment {
         ListView listview = root.findViewById(R.id.friendslist);
         //DatabaseReference reference =
         friendsList = new ArrayList<>();
-        friendsList.add(new User("Connor","1111",1234,true,null,null));
-        friendsList.add(new User("Simon","2222",1234,true,null,null));
-        friendsList.add(new User("aaaaa","3333",1234,true,null,null));
+        friendsList.add(new User("Connor",null,1234,0,null,null,null));
+        friendsList.add(new User("Simon",null,1234,0,null,null,null));
+        friendsList.add(new User("aaaaa",null,1234,0,null,null,null));
 
         adapter = new FriendsListAdapter(getContext(), friendsList);
         listview.setAdapter(adapter);
