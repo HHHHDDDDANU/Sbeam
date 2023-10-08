@@ -11,6 +11,9 @@ public class Tokenizer {
     private Integer price;
     private String yearOperator; // can be '=', '<', '>', etc.
     private String priceOperator; // can be '=', '<', '>', etc.
+    public boolean grammarRight = true;
+    public boolean invalidInput = false;
+    public int nameSearchedTimes = 0;
 
     public Tokenizer(String criteria) {
         StringTokenizer tokenizer = new StringTokenizer(criteria, ";");
@@ -21,28 +24,46 @@ public class Tokenizer {
     }
 
     private void parseToken(String token) {
-        if (token.startsWith("year")) {
-            yearOperator = token.substring(4, 5);
-            year = Integer.parseInt(token.substring(5).trim());
-            System.out.println("year = " + year + "yearOperator = " + yearOperator);
-        } else if (token.startsWith("price")) {
+        // delete all extra spaces;
+        token = token.replaceAll(" ", "");
 
-            priceOperator = token.substring(5, 6);
-            price = Integer.parseInt(token.substring(6).trim());
+        Pattern patternSign = Pattern.compile("([<>]=?|=)");
+        Pattern patternNum = Pattern.compile("\\d+");
+//        Pattern combinedPattern = Pattern.compile("([<>]=?|=)\\d+");
+        Pattern combinedPattern = Pattern.compile("(year|price)(<|>|=)\\d+");
+        grammarRight = combinedPattern.matcher(token).matches();
+        if (grammarRight) {
+            if (token.startsWith("year")) {
+                yearOperator = token.substring(4, 5);
+                year = Integer.parseInt(token.substring(5).trim());
+                System.out.println("year = " + year + "yearOperator = " + yearOperator);
+            } else if (token.startsWith("price")) {
+
+                priceOperator = token.substring(5, 6);
+                price = Integer.parseInt(token.substring(6).trim());
 
 //            Pattern pattern = Pattern.compile("([<>]=?|=)");
 //            Matcher matcher = pattern.matcher(token);
 //            Pattern patternPrice = Pattern.compile("\\d+");
 //            Matcher matcherPrice = pattern.matcher(token);
-////          Check if any match is found and return the first one
+//          Check if any match is found and return the first one
 //            if (matcher.find()) {
 //                priceOperator = matcher.group(1);
 //            }
 //            if (matcherPrice.find()) {
 //                price = Integer.parseInt(matcherPrice.group(1));
 //            }
-        } else {
-            name = token.trim();
+            }
+        }
+        else {
+            if (!token.startsWith("year") && !token.startsWith("price")) {
+                grammarRight = true;
+                name = token.trim();
+                nameSearchedTimes++;
+            }
+            else {
+                invalidInput = true;
+            }
         }
     }
 
@@ -56,8 +77,10 @@ public class Tokenizer {
 
     public boolean matches(Game game) {
 
-        if (name != null && !game.getName().toLowerCase().contains(name.toLowerCase())) {
-            return false;
+        if (name != null) {
+            if (!game.getName().toLowerCase().contains(name.toLowerCase())) {
+                return false;
+            }
         }
 
         if (year != null) {
@@ -73,21 +96,6 @@ public class Tokenizer {
                     break;
             }
         }
-
-//        if (price != null) {
-//            switch (priceOperator) {
-//                case "=":
-//                    if (game.getPrice() != price) return false;
-//                    break;
-//                case "<":
-//                    if (game.getPrice() >= price) return false;
-//                    break;
-//                case ">":
-//                    if (game.getPrice() <= price) return false;
-//                    break;
-//            }
-//        }
-
         return true;
     }
 }

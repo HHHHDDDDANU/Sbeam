@@ -39,9 +39,9 @@ import java.util.Comparator;
 public class GameListFragment extends Fragment {
     GameListAdapter adapter;
     public ArrayList<Game> games=new ArrayList<>();
-    public AVLTree gameTree;
+    public AVLTree gameTree = new AVLTree();
     Spinner spinner;
-    ArrayList<Game> originalGames;
+    ArrayList<Game> originalGames = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -91,7 +91,7 @@ public class GameListFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     games.add(snapshot.getValue(Game.class));
-//                    gameTree.insert(snapshot.getValue(Game.class)); // not working.
+                    gameTree.insert(snapshot.getValue(Game.class));
                 }
                 adapter.notifyDataSetChanged();
                 originalGames.addAll(games); // This one works!
@@ -102,7 +102,6 @@ public class GameListFragment extends Fragment {
                 Log.w("Firebase", "loadPost:onCancelled", databaseError.toException());
             }
         });
-        originalGames = new ArrayList<>(games);
         Button button=root.findViewById(R.id.search_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,26 +112,18 @@ public class GameListFragment extends Fragment {
                 String criteria = searchEditText.getText().toString();
 
                 Tokenizer tokenizer = new Tokenizer(criteria);
+                System.out.println("valid??" + tokenizer.invalidInput);
+                if (tokenizer.invalidInput) {
+                    games.clear();
+                    adapter.notifyDataSetChanged();
+                    tokenizer.invalidInput = false;
+                    return;
+                }
 
                 ArrayList<Game> matchedGames = new ArrayList<>();
 
                 if (criteria.contains("price")) {
-                    // For "<=" and ">=" later.
-//                     Should be in format "price<=5;"
-//                     Set up price string
-//                    int indexOfPrice = criteria.indexOf("price");
-//                    String priceString = criteria.substring(indexOfPrice,criteria.indexOf(";", indexOfPrice));
-//                    priceString.replaceAll(" ", "");
-//                    String operator = "";
-//                    Pattern pattern = Pattern.compile("([<>]=?|=)");
-//                    Matcher matcher = pattern.matcher(priceString);
-//                    // Check if any match is found and return the first one
-//                    if (matcher.find()) {
-//                        operator = matcher.group(1);
-//                    }
-
-//                    originalGames.clear();
-                    System.out.println("price : "+ tokenizer.getPrice());
+                    System.out.println("price : " + tokenizer.getPrice());
                     System.out.println("priceOperator: " + tokenizer.getPriceOperator());
                     matchedGames.addAll(gameTree.inorderToList(tokenizer.getPrice(),tokenizer.getPriceOperator()));
                     ArrayList<Game> toBeAddMatchedGames = new ArrayList<>();
@@ -154,7 +145,7 @@ public class GameListFragment extends Fragment {
                     System.out.println("matched size " + matchedGames.size());
 
                     for (Game game : originalGames) {
-                        if (tokenizer.matches(game)) {
+                        if (tokenizer.matches(game) && !matchedGames.contains(game)) {
                             matchedGames.add(game);
                         }
                     }
