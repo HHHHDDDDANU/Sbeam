@@ -9,10 +9,10 @@ public class User implements Serializable {
     private int balance;
     private boolean status;
     private ArrayList<Game> wishlist;
-    private ArrayList<Friend> friends;
+    private ArrayList<User> friends;
     public User(){}
 
-    public User(String username, String profileUrl, int balance, boolean status, ArrayList<Game> wishlist, ArrayList<Friend> friends) {
+    public User(String username, String profileUrl, int balance, boolean status, ArrayList<Game> wishlist, ArrayList<User> friends) {
         this.username = username;
         this.profileUrl = profileUrl;
         this.balance = balance;
@@ -38,7 +38,7 @@ public class User implements Serializable {
         return wishlist;
     }
 
-    public ArrayList<Friend> getFriends() {
+    public ArrayList<User> getFriends() {
         return friends;
     }
 
@@ -59,7 +59,7 @@ public class User implements Serializable {
         this.wishlist = wishlist;
     }
 
-    public void setFriends(ArrayList<Friend> friends) {
+    public void setFriends(ArrayList<User> friends) {
         this.friends = friends;
     }
 }

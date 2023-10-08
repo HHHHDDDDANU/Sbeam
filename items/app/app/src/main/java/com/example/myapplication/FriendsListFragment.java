@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
 public class FriendsListFragment extends Fragment {
 
     FriendsListAdapter adapter;
-    private ArrayList<Friend> friendsList;
+    private ArrayList<User> friendsList;
 
 
     @Override
@@ -39,9 +39,9 @@ public class FriendsListFragment extends Fragment {
         ListView listview = root.findViewById(R.id.friendslist);
         //DatabaseReference reference =
         friendsList = new ArrayList<>();
-        friendsList.add(new Friend("Connor","1111",1234,true,null,null,false));
-        friendsList.add(new Friend("Simon","2222",1234,true,null,null,false));
-        friendsList.add(new Friend("aaaaa","3333",1234,true,null,null,false));
+        friendsList.add(new User("Connor","1111",1234,true,null,null));
+        friendsList.add(new User("Simon","2222",1234,true,null,null));
+        friendsList.add(new User("aaaaa","3333",1234,true,null,null));
 
         adapter = new FriendsListAdapter(getContext(), friendsList);
         listview.setAdapter(adapter);
