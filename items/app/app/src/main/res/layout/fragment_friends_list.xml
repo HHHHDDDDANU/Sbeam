@@ -13,13 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_marginTop = "30dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/friendslist_userphoto"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/profile"
+            android:src="@mipmap/ic_launcher"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp">
 
@@ -48,6 +49,14 @@
                 android:textStyle="bold">
             </TextView>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
     </LinearLayout>
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -63,7 +72,7 @@
             android:paddingLeft="10dp"
             android:hint="Search for people"
             android:textSize="15sp"
-            android:textColor="@color/white"
+            android:textColor="@color/light_purple"
             android:background="@drawable/friendslist_edittextbg">
         </EditText>
     </RelativeLayout>
@@ -85,11 +94,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
 
 </LinearLayout>

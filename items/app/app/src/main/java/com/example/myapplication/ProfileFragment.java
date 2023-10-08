@@ -1,19 +1,123 @@
 package com.example.myapplication;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.imageview.ShapeableImageView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 
 public class ProfileFragment extends Fragment {
+    User user;
+    ShapeableImageView profile;
+    TextView username;
+    TextView balance;
+    Button wishlist;
+    Button signout;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root=inflater.inflate(R.layout.profile_fragment,container,false);
+        profile=root.findViewById(R.id.profile);
+        username=root.findViewById(R.id.profile_username);
+        balance=root.findViewById(R.id.balance);
+        wishlist=root.findViewById(R.id.button_wishlist);
+        signout=root.findViewById(R.id.button_signout);
+        String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users").child(uid);
+        //save profile img to cloud
+        ActivityResultLauncher<String> uploadIMG = registerForActivityResult(
+                new ActivityResultContracts.GetContent(),
+                new ActivityResultCallback<Uri>() {
+                    @Override
+                    public void onActivityResult(Uri uri) {
+                        if (uri != null) {
+                            Glide.with(getActivity()).load(uri).into(profile);
+                            StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+                            StorageReference imageRef = storageRef.child("images/" + uri.getLastPathSegment());  // you can also use a custom file name
+                            UploadTask uploadTask = imageRef.putFile(uri);
+
+                            uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                                @Override
+                                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                                    if (!task.isSuccessful()) {
+                                        throw task.getException();
+                                    }
+                                    return imageRef.getDownloadUrl();
+                                }
+                            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    if (task.isSuccessful()) {
+                                        Uri downloadUri = task.getResult();
+                                        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("users").child(uid);
+                                        dbRef.child("profileUrl").setValue(downloadUri.toString());
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+        reference.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                user=dataSnapshot.getValue(User.class);
+                balance.setText("$"+user.getBalance());
+                Glide.with(getContext()).load(user.getProfileUrl()).into(profile);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.w("Firebase", "loadPost:onCancelled", databaseError.toException());
+            }
+        });
+        wishlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(), MyWishlist.class);
+                startActivity(intent);
+            }
+        });
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent=new Intent(getContext(),SignActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                uploadIMG.launch("image/*");
+            }
+        });
         return root;
     }
 }

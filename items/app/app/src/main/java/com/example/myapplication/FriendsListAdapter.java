@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.ImageView;
+import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
@@ -14,11 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FriendsListAdapter extends ArrayAdapter<Friend> {
+public class FriendsListAdapter extends ArrayAdapter<User> {
     private Context context;
-    private ArrayList<Friend> friendsList;
+    private ArrayList<User> friendsList;
 
-    public FriendsListAdapter(@NonNull Context context, ArrayList<Friend> friendsList) {
+    public FriendsListAdapter(@NonNull Context context, ArrayList<User> friendsList) {
         super(context, R.layout.friends_list_item,friendsList);
         this.context = context;
         this.friendsList = friendsList;
@@ -28,7 +29,7 @@ public class FriendsListAdapter extends ArrayAdapter<Friend> {
             convertView = LayoutInflater.from(context).inflate(R.layout.friends_list_item, parent, false);
         }
 
-        Friend friend = getItem(position);
+        User friend = getItem(position);
 
         ImageView friendPhotoImageView = convertView.findViewById(R.id.friends_photo);
         TextView friendNameTextView = convertView.findViewById(R.id.friends_name);
@@ -37,11 +38,11 @@ public class FriendsListAdapter extends ArrayAdapter<Friend> {
         if (friend != null) {
             //friendPhotoImageView.setImageResource(friend.getPhotoResource());
             friendNameTextView.setText(friend.getUsername());
-            if (friend.getStatus()) {
-                friendStatusTextView.setText("On line");
+            if (friend.getStatus()==1) {
+                friendStatusTextView.setText("on line");
                 friendStatusTextView.setTextColor(context.getResources().getColor(R.color.green));
             } else {
-                friendStatusTextView.setText("Off line");
+                friendStatusTextView.setText("busy");
                 friendStatusTextView.setTextColor(context.getResources().getColor(R.color.red));
             }
         }
