@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:background="@color/purple">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop = "30dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/friendslist_userphoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/profile"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
+
+        </ImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/friendslist_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USER_NAME"
+                android:textSize="22sp"
+                android:gravity="left"
+                android:textColor="@color/white">
+            </TextView>
+            <TextView
+                android:id="@+id/friendslist_online"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="on line"
+                android:textSize="15sp"
+                android:gravity="left"
+                android:textColor="@color/green"
+                android:textStyle="bold">
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp">
+
+        <EditText
+            android:id="@+id/friendslist_searchforpeople"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:paddingLeft="10dp"
+            android:hint="Search for people"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:background="@drawable/friendslist_edittextbg">
+        </EditText>
+    </RelativeLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/friendslist"
+            android:layout_width="match_parent"
+            android:layout_height="570dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/friendslist_searchforpeople"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="NotSibling" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+</LinearLayout>
