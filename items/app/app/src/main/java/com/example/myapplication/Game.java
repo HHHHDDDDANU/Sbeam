@@ -91,5 +91,13 @@ public class Game implements Serializable {
     public int hashCode() {
         return Objects.hash(name, year, producer, review, price, type, description, url);
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }
 
