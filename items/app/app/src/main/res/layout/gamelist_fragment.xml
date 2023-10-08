@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#1B2838">
     <EditText
         android:id="@+id/search_content"
         android:layout_width="250dp"
@@ -13,10 +14,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_bias="0.02"
         app:layout_constraintHorizontal_bias="0.1"
-        android:paddingLeft="10dp"
+        android:paddingStart="10dp"
         android:hint="Search Here"
-        android:background="@drawable/edittext_bg"/>
-    <Button
+        android:textColorHint="#C5C3C0"
+        android:textColor="@color/white"
+        android:background="@drawable/search_bg"/>
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/search_button"
         android:layout_width="100dp"
         android:layout_height="60dp"
@@ -25,7 +28,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.02"
-        android:text="Search"/>
+        android:text="Search"
+        android:textColor="@color/white"
+        android:background="@drawable/search_button"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,6 +38,7 @@
         app:layout_constraintEnd_toStartOf="@id/detail_spinner"
         app:layout_constraintBottom_toBottomOf="@id/detail_spinner"
         android:text="SORT BY: "
+        android:textColor="#C5C3C0"
         android:textStyle="bold"/>
     <Spinner
         android:id="@+id/detail_spinner"

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/purple">
+    android:background="#1B2838">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -75,18 +75,22 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginTop="80dp">
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_library"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_marginRight="20dp"
-                        android:text="Library" />
-                    <Button
+                        android:text="Library"
+                        android:textColor="#C5C3C0"
+                        android:background="@drawable/profile_button_bg"/>
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/button_friends"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_marginLeft="20dp"
-                        android:text="Friends"/>
+                        android:text="Friends"
+                        android:textColor="#C5C3C0"
+                        android:background="@drawable/profile_button_bg"/>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -95,7 +99,7 @@
                 android:background="@drawable/profile_bg"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp">
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_wishlist"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
@@ -104,8 +108,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_margin="15dp"
                     android:text="Wishlist"
+                    android:textColor="#C5C3C0"
+                    android:background="@drawable/profile_button_bg"
                     android:textSize="25sp"/>
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_signout"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
@@ -114,6 +120,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_margin="15dp"
                     android:text="Sign out"
+                    android:textColor="#C5C3C0"
+                    android:background="@drawable/profile_button_bg"
                     android:textSize="25sp"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

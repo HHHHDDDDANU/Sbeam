@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyWishlist">
+    tools:context=".MyWishlist"
+    android:background="#1B2838">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/wishlist_cons"
         android:layout_width="match_parent"
