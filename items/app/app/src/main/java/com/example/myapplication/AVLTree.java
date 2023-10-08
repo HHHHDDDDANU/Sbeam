@@ -125,21 +125,21 @@ public class AVLTree {
         inorder(node.right);
     }
 
-    public ArrayList<Game> preorderToList() {
-        ArrayList<Game> gameList = new ArrayList<>();
-        preorderToList(root, gameList);
-        return gameList;
-    }
-
-    private void preorderToList(AVLNode node, ArrayList<Game> gameList) {
-        if (node == null)
-            return;
-
-        gameList.add(node.game);
-
-        preorderToList(node.left, gameList);
-        preorderToList(node.right, gameList);
-    }
+//    public ArrayList<Game> preorderToList() {
+//        ArrayList<Game> gameList = new ArrayList<>();
+//        preorderToList(root, gameList);
+//        return gameList;
+//    }
+//
+//    private void preorderToList(AVLNode node, ArrayList<Game> gameList) {
+//        if (node == null)
+//            return;
+//
+//        gameList.add(node.game);
+//
+//        preorderToList(node.left, gameList);
+//        preorderToList(node.right, gameList);
+//    }
 
 
     public void printTreeStructure() {
@@ -181,49 +181,10 @@ public class AVLTree {
             return searchByName(node.right, targetName);
     }
 
-//
-//    // Search by price requirement.
-//    public ArrayList<Game> findGamesByPrice(int price, String operator) {
-//        ArrayList<Game> adjustedList = new ArrayList<>();
-////        findGamesByPrice(root, price, operator, adjustedList);
-//        AVLNode index = root;
-//        if (index != null) {
-//            if (operator.equals("<")) {
-//                if
-//            }
-//            else if (operator.charAt(0) == '>') {
-//
-//            }
-//        }
-//
-//        return adjustedList;
-//    }
-//
-//    private void findGamesByPrice(AVLNode node, int price, String operator, ArrayList<Game> adjustedList) {
-//        if (node == null)
-//            return;
-//
-//        if (operator.equals("<")) {
-//
-//        }
-//        else if (operator.charAt(0) == '>') {
-//
-//        }
-//
-//        findGamesByPrice(node.left, price, operator, adjustedList);
-//
-//        // Add condition check here and add to list if it satisfies the condition
-//        if ((operator.equals("less") && node.game.getPrice() < price) ||
-//                (operator.equals("greater") && node.game.getPrice() > price)) {
-//            adjustedList.add(node.game);
-//        }
-//
-//        findGamesByPrice(node.right, price, operator, adjustedList);
-//    }
-
-
-    // Try again god damn it please god no please
     public ArrayList<Game> inorderToList(int price, String operator) {
+        /**
+         * We use inorder here to print the tree, while adding to list, we sort the game list as requested.
+         */
         ArrayList<Game> sortedList = new ArrayList<>();
         inorderToList(root, sortedList, price, operator);
         return sortedList;

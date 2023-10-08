@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
 
 public class GameListFragment extends Fragment {
     GameAdapter adapter;
-    public ArrayList<Game> games=new ArrayList<>();
+    public ArrayList<Game> games = new ArrayList<>();
     public AVLTree gameTree;
     ArrayList<Game> originalGames = new ArrayList<>();
     @Nullable
@@ -41,9 +41,11 @@ public class GameListFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     games.add(snapshot.getValue(Game.class));
+//                    gameTree.insert(snapshot.getValue(Game.class)); // not working.
                 }
                 adapter=new GameAdapter(getContext(),games);
                 listView.setAdapter(adapter);
+                originalGames.addAll(games); // This one works!
             }
 
             @Override
@@ -51,9 +53,14 @@ public class GameListFragment extends Fragment {
                 Log.w("Firebase", "loadPost:onCancelled", databaseError.toException());
             }
         });
-        originalGames = new ArrayList<>(games);
+//        originalGames = new ArrayList<>(games); // This one seems to be useless.
         adapter=new GameAdapter(getContext(),games);
         listView.setAdapter(adapter);
+//        for (Game game : games) {
+//            gameTree.insert(game);
+//        }
+        System.out.println("here print tree struct");
+        gameTree.printTreeStructure();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -64,7 +71,12 @@ public class GameListFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println("now try tree");
+                for (Game game : games) {
+                    gameTree.insert(game);
+                }
                 System.out.println("Clicked");
+                System.out.println("First attempt: Orig is emPty? " + originalGames.isEmpty());
                 EditText searchEditText = root.findViewById(R.id.search_content);
                 System.out.println(searchEditText);
                 String criteria = searchEditText.getText().toString();
@@ -87,22 +99,37 @@ public class GameListFragment extends Fragment {
 //                    if (matcher.find()) {
 //                        operator = matcher.group(1);
 //                    }
-                    originalGames.clear();
-                    originalGames.addAll(gameTree.inorderToList(tokenizer.getPrice(),tokenizer.getPriceOperator()));
-//                    matchedGames.addAll(originalGames);
-                    for (Game game : originalGames) {
+
+//                    originalGames.clear();
+                    System.out.println("price : "+ tokenizer.getPrice());
+                    System.out.println("priceOperator: " + tokenizer.getPriceOperator());
+                    matchedGames.addAll(gameTree.inorderToList(tokenizer.getPrice(),tokenizer.getPriceOperator()));
+                    ArrayList<Game> toBeAddMatchedGames = new ArrayList<>();
+                    for (Game game : matchedGames) {
                         if (tokenizer.matches(game)) {
-                            matchedGames.add(game);
+                            toBeAddMatchedGames.add(game);
                         }
                     }
+                    matchedGames.clear();
+                    matchedGames.addAll(toBeAddMatchedGames);
+                    System.out.println("game size " + games.size());
+                    System.out.println("Orig size " + originalGames.size());
+                    System.out.println("matched size " + matchedGames.size());
                 }
                 else {
-                    originalGames = new ArrayList<>(games);
+                    System.out.println("Orig is emPty? 2! " + originalGames.isEmpty());
+                    System.out.println("game size " + games.size());
+                    System.out.println("Orig size " + originalGames.size());
+                    System.out.println("matched size " + matchedGames.size());
+
                     for (Game game : originalGames) {
                         if (tokenizer.matches(game)) {
                             matchedGames.add(game);
                         }
                     }
+                    System.out.println("After searched, Orig size " + originalGames.size());
+                    System.out.println("After searched, matched size " + matchedGames.size());
+                    System.out.println("After searched, game size " + games.size());
                 }
 
                 games.clear();
