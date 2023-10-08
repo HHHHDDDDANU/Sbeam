@@ -7,7 +7,7 @@ public class User implements Serializable {
     private String username;
     private String profileUrl;
     private int balance;
-    private boolean status;//online or offline
+    private boolean status;
     private ArrayList<Game> wishlist;
     private ArrayList<Friend> friends;
     public User(){}

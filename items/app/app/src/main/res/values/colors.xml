@@ -6,5 +6,6 @@
     <color name="purple">#ff1f0245</color>
     <color name="light_purple">#ff5c4694</color>
     <color name="red">#FFe71111</color>
+    <color name="lightest_purple">#ffd9d2e9</color>
 
 </resources>
