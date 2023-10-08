@@ -38,6 +38,7 @@ public class MyLibrary extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user=dataSnapshot.getValue(User.class);
+                library.clear();
                 if(user.getLibrary()!=null) {
                     library.addAll(user.getLibrary());
                 }

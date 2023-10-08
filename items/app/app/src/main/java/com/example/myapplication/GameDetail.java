@@ -45,6 +45,15 @@ public class GameDetail extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user=dataSnapshot.getValue(User.class);
+                if(user.getWishlist()!=null){
+                    if(user.getWishlist().contains(game)){
+                        addToWishlist.setText("Remove from wishlist");
+                    }else {
+                        addToWishlist.setText("Add to my wishlist");
+                    }
+                }else {
+                    addToWishlist.setText("Add to my wishlist");
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -80,13 +89,23 @@ public class GameDetail extends AppCompatActivity {
         addToWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(addToWishlist()){
+                if(user.getWishlist()!=null){
                     // update user data in firebase
+                    if(user.getWishlist().contains(game)){
+                        removeFromWishlist();
+                        FirebaseDatabase.getInstance().getReference().child("users").child(user.getUsername()).setValue(user);
+                        Toast.makeText(getApplicationContext(), "Remove from wishlist successfully",
+                                Toast.LENGTH_SHORT).show();
+                    }else {
+                        addToWishlist();
+                        FirebaseDatabase.getInstance().getReference().child("users").child(user.getUsername()).setValue(user);
+                        Toast.makeText(getApplicationContext(), "Add to wishlist successfully",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }else {
+                    addToWishlist();
                     FirebaseDatabase.getInstance().getReference().child("users").child(user.getUsername()).setValue(user);
                     Toast.makeText(getApplicationContext(), "Add to wishlist successfully",
-                            Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(getApplicationContext(), "Already in wishlist!",
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -127,21 +146,22 @@ public class GameDetail extends AppCompatActivity {
         }
     }
     // add game to the wishlist of the current user
-    public boolean addToWishlist(){
+    public void addToWishlist(){
         ArrayList<Game> wishlist;
         // wishlist is not empty
         if(user.getWishlist()!=null){
             // game is already in wish list
             wishlist=user.getWishlist();
-            if(wishlist.contains(game)){
-                return false;
-            }
         // wishlist is empty
         }else {
             wishlist=new ArrayList<>();
         }
         wishlist.add(game);
         user.setWishlist(wishlist);
-        return true;
+    }
+    public void removeFromWishlist(){
+        ArrayList<Game> wishlist=user.getWishlist();
+        wishlist.remove(game);
+        user.setWishlist(wishlist);
     }
 }

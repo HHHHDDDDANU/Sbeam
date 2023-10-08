@@ -38,6 +38,7 @@ public class MyWishlist extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user=dataSnapshot.getValue(User.class);
+                games.clear();
                 if(user.getWishlist()!=null) {
                     games.addAll(user.getWishlist());
                 }
