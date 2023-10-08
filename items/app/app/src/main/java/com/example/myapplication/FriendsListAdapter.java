@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.ImageView;
+import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 
@@ -38,10 +39,10 @@ public class FriendsListAdapter extends ArrayAdapter<Friend> {
             //friendPhotoImageView.setImageResource(friend.getPhotoResource());
             friendNameTextView.setText(friend.getUsername());
             if (friend.getStatus()) {
-                friendStatusTextView.setText("On line");
+                friendStatusTextView.setText("on line");
                 friendStatusTextView.setTextColor(context.getResources().getColor(R.color.green));
             } else {
-                friendStatusTextView.setText("Off line");
+                friendStatusTextView.setText("busy");
                 friendStatusTextView.setTextColor(context.getResources().getColor(R.color.red));
             }
         }
