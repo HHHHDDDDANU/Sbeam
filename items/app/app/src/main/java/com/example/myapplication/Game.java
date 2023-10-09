@@ -85,12 +85,12 @@ public class Game implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Game game = (Game) o;
-        return year == game.year && review == game.review && price == game.price && Objects.equals(name, game.name) && Objects.equals(producer, game.producer) && Objects.equals(type, game.type) && Objects.equals(description, game.description) && Objects.equals(url, game.url);
+        return year == game.year && review == game.review && price == game.price && Objects.equals(name, game.name) && Objects.equals(producer, game.producer) && Objects.equals(type, game.type) && Objects.equals(description, game.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, year, producer, review, price, type, description, url);
+        return Objects.hash(name, year, producer, review, price, type, description);
     }
 
     public String getUrl() {

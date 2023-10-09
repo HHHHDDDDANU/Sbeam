@@ -37,9 +37,7 @@ public class GameListAdapter extends RecyclerView.Adapter<GameListAdapter.ViewHo
         Game game = gameList.get(position);
         holder.gameName.setText(game.getName());
         holder.gamePrice.setText("$" + game.getPrice());
-        if(game.getUrl()!=null){
-            Glide.with(context).load(game.getUrl()).into(holder.gameImage);
-        }
+        Glide.with(context).load(game.getUrl()).into(holder.gameImage);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
