@@ -1,28 +1,21 @@
 package com.example.myapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,7 +28,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
-
+/**
+ * @author u7574421 Simon Fu
+ * This class is for displaying a list of games,
+ * containing a recycler view for showing the game list, and a search box for searching games.
+ */
 public class GameListFragment extends Fragment {
     GameListAdapter adapter;
     public ArrayList<Game> games=new ArrayList<>();

@@ -3,6 +3,10 @@ package com.example.myapplication;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class is used to represent a game, and each instance of this class represents a unique game.
+ */
 public class Game implements Serializable {
     private String name;
     private int year;

@@ -33,7 +33,10 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-
+/**
+ * @author u7574421 Simon Fu
+ * This class defines the profile fragment, used to display the user's personal information.
+ */
 public class ProfileFragment extends Fragment {
     User user;
     ShapeableImageView profile;

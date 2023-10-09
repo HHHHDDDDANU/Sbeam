@@ -1,14 +1,15 @@
 package com.example.myapplication;
 
-import android.app.AppComponentFactory;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+/**
+ * @author u7574421 Simon Fu
+ * This is an adapter class,
+ * used to associate the tablayout with the login and registration fragment.
+ */
 public class SignInAdapter extends FragmentStateAdapter {
     public SignInAdapter(AppCompatActivity activity){
         super(activity);

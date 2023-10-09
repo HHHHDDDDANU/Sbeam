@@ -11,6 +11,11 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+/**
+ * @author u7574421 Simon Fu
+ * Abandoned class, used to extract data from local json file.
+ */
 public class JsonParser {
     public static ArrayList<Game> parseJsonFromAssets(Context context, String fileName) {
         AssetManager assetManager = context.getAssets();

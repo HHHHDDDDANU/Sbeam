@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +14,11 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+/**
+ * @author u7574421 Simon Fu
+ * This is an adapter class, used to associate the recyclerview displaying the library with the custom item XML file,
+ * while also defining the click event for each item.
+ */
 public class LibraryListAdapter extends RecyclerView.Adapter<LibraryListAdapter.ViewHolder>{
     private List<Game> gamelist;
     private Context context;

@@ -22,6 +22,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ * @author u7574421 Simon Fu
+ *
+ * This class is used to display the details of a specified game,
+ * and users can purchase the game or add it to the wishlist in this activity.
+ */
 public class GameDetail extends AppCompatActivity {
     ImageView imageView;
     TextView name;

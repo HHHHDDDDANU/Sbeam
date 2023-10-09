@@ -17,6 +17,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class defines the user's library, containing a recyclerview,
+ * used to display the games currently owned by the user.
+ */
 public class MyLibrary extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Game> library=new ArrayList<>();

@@ -8,6 +8,11 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class defines the main interface, containing a pageviewer and a tablayout,
+ * used for switching and displaying three fragments: news, gamelist, and profile.
+ */
 public class MainInterface extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager;

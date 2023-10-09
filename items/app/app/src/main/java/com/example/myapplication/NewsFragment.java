@@ -20,6 +20,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class defines the news fragment, containing two recyclerviews,
+ * used to display the latest games and recommended games.
+ */
 public class NewsFragment extends Fragment {
     RecyclerView recommended;
     RecyclerView newgame;

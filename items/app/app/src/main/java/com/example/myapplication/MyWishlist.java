@@ -18,6 +18,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class defines the wishlist, containing a recyclerview,
+ * used to display the contents of the user's wishlist.
+ */
 public class MyWishlist extends AppCompatActivity {
     RecyclerView recyclerView;
     ImageView imageView;

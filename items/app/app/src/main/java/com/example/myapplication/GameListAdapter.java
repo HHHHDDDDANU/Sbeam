@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -16,6 +15,10 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+/**
+ * @author u7574421 Simon Fu
+ * This is an adapter class, used to associate the custom item XML file with the recyclerview.
+ */
 public class GameListAdapter extends RecyclerView.Adapter<GameListAdapter.ViewHolder>{
     private List<Game> gameList;
     private Context context;

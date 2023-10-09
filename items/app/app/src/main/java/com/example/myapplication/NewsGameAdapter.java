@@ -15,6 +15,11 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+/**
+ * @author u7574421 Simon Fu
+ * This is an adapter class,
+ * used to associate the displaying of latest games and recommended games with the recyclerview and custom item XML.
+ */
 public class NewsGameAdapter extends RecyclerView.Adapter<NewsGameAdapter.MyViewHolder> {
 
     private List<Game> gameList;

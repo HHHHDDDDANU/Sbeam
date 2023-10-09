@@ -19,6 +19,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class is used to define the login fragment, implementing the user login function.
+ */
 public class LoginFragment extends Fragment {
     EditText username,password;
     Button button;
