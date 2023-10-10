@@ -3,6 +3,10 @@ package com.example.myapplication;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class defines a user, and each instance of this class represents a unique user.
+ */
 public class User implements Serializable {
     private String username;
     private String profileUrl;

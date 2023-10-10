@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.LibraryAndWishlist;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.example.myapplication.Game;
+import com.example.myapplication.GameList.GameListAdapter;
+import com.example.myapplication.R;
+import com.example.myapplication.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,6 +22,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class defines the wishlist, containing a recyclerview,
+ * used to display the contents of the user's wishlist.
+ */
 public class MyWishlist extends AppCompatActivity {
     RecyclerView recyclerView;
     ImageView imageView;

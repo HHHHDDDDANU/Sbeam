@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.LoginAndSignup;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,10 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class defines the recover password activity,
+ * which recovers the password by sending an email to the specified email address.
+ */
 public class ResetPassword extends AppCompatActivity {
     EditText editText;
     Button button;

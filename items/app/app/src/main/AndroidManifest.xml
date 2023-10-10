@@ -18,13 +18,13 @@
             android:name=".FriendsListActivity"
             android:exported="false" />
         <activity
-            android:name=".MyLibrary"
+            android:name=".LibraryAndWishlist.MyLibrary"
             android:exported="false" />
         <activity
-            android:name=".ResetPassword"
+            android:name=".LoginAndSignup.ResetPassword"
             android:exported="false" />
         <activity
-            android:name=".MyWishlist"
+            android:name=".LibraryAndWishlist.MyWishlist"
             android:exported="false" />
         <activity
             android:name=".GameDetail"
@@ -37,7 +37,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".SignActivity"
+            android:name=".LoginAndSignup.SignActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity

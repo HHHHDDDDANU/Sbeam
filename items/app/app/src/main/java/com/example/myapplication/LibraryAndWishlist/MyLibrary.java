@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.LibraryAndWishlist;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.myapplication.Game;
+import com.example.myapplication.LibraryAndWishlist.LibraryListAdapter;
+import com.example.myapplication.R;
+import com.example.myapplication.User;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -17,6 +21,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class defines the user's library, containing a recyclerview,
+ * used to display the games currently owned by the user.
+ */
 public class MyLibrary extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Game> library=new ArrayList<>();

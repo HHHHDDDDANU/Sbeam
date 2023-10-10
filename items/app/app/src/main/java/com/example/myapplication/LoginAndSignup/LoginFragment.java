@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.LoginAndSignup;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,11 +14,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.myapplication.MainInterface;
+import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class is used to define the login fragment, implementing the user login function.
+ */
 public class LoginFragment extends Fragment {
     EditText username,password;
     Button button;

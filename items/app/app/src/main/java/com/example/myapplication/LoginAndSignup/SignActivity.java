@@ -1,13 +1,19 @@
-package com.example.myapplication;
+package com.example.myapplication.LoginAndSignup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
+import com.example.myapplication.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+/**
+ * @author u7574421 Simon Fu
+ * This class defines the login and registration activity, containing a tablayout and a viewpager,
+ * used for displaying and switching between the login and registration fragments.
+ */
 public class SignActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager;

@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.LibraryAndWishlist;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,15 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.myapplication.Game;
+import com.example.myapplication.GameDetail;
+import com.example.myapplication.R;
 
 import java.util.List;
 
+/**
+ * @author u7574421 Simon Fu
+ * This is an adapter class, used to associate the recyclerview displaying the library with the custom item XML file,
+ * while also defining the click event for each item.
+ */
 public class LibraryListAdapter extends RecyclerView.Adapter<LibraryListAdapter.ViewHolder>{
     private List<Game> gamelist;
     private Context context;
@@ -38,7 +45,7 @@ public class LibraryListAdapter extends RecyclerView.Adapter<LibraryListAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context,GameDetail.class);
+                Intent intent=new Intent(context, GameDetail.class);
                 intent.putExtra("game",gamelist.get(position));
                 context.startActivity(intent);
             }
