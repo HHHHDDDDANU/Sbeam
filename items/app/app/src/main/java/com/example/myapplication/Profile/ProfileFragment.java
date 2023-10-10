@@ -1,4 +1,5 @@
 package com.example.myapplication.Profile;
+import com.example.myapplication.FriendsListActivity;
 
 import android.content.Intent;
 import android.net.Uri;

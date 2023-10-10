@@ -36,6 +36,7 @@ import com.google.firebase.database.ValueEventListener;
     private User friend;
     private EditText inputText;
     private Button buttonSend;
+    private TextView chat_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ import com.google.firebase.database.ValueEventListener;
         String myPhotoUrl = String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl());
         inputText = findViewById(R.id.input_text);
         buttonSend = findViewById(R.id.chat_send_button);
+        chat_name = findViewById(R.id.chat_name);
+        chat_name.setText(uid);
 
         buttonSend.setOnClickListener(new View.OnClickListener(){
             @Override

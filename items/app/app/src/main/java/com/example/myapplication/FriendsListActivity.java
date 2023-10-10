@@ -10,7 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,24 +29,24 @@ public class FriendsListActivity extends AppCompatActivity {
     FriendsListAdapter adapter;
     private ArrayList<User> friendsList;
     private ArrayList<String> friendsUserName;
-
+    private TextView username;
+    private ImageView userphoto;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends_list);
-
+        username = findViewById(R.id.friendslist_username);
+        userphoto = findViewById(R.id.friendslist_userphoto);
         RecyclerView recyclerView = findViewById(R.id.friendslist);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         friendsList = new ArrayList<>();
         friendsUserName = new ArrayList<>();
-//        friendsList.add(new User("Connor",null,1234,0,null,null,null));
-//        friendsList.add(new User("Simon",null,1234,0,null,null,null));
-//        friendsList.add(new User("aaaaa",null,1234,0,null,null,null));
 
-        //Button chatButton = findViewById(R.id.friend_operate_button);
         String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String url = String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl());
+        username.setText(uid);
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("friendsList").child(uid);
 
         reference.addValueEventListener(new ValueEventListener() {
