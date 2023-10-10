@@ -11,9 +11,11 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop = "30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -26,37 +28,40 @@
             android:layout_marginLeft="20dp">
 
         </ImageView>
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/friendslist_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="USER_NAME"
-                android:textSize="22sp"
                 android:gravity="left"
-                android:textColor="@color/white">
-            </TextView>
+                android:text="USER_NAME"
+                android:textColor="@color/white"
+                android:textSize="22sp"></TextView>
+
             <TextView
                 android:id="@+id/friendslist_online"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="on line"
-                android:textSize="15sp"
                 android:gravity="left"
+                android:text="on line"
                 android:textColor="@color/green"
-                android:textStyle="bold">
-            </TextView>
+                android:textSize="15sp"
+                android:textStyle="bold"></TextView>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_marginLeft="30dp"
+            android:text=""
+            >
 
+        </Button>
 
-        </LinearLayout>
 
     </LinearLayout>
     <RelativeLayout

@@ -12,7 +12,7 @@
         android:layout_gravity="center_vertical">
     </ImageView>
     <TextView
-        android:id="@+id/chat_log_message"
+        android:id="@+id/chat_log_recieve_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"

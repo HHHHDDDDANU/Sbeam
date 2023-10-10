@@ -42,12 +42,14 @@ public class ProfileFragment extends Fragment {
     Button wishlist;
     Button signout;
     Button library;
+    Button friends;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root=inflater.inflate(R.layout.profile_fragment,container,false);
         profile=root.findViewById(R.id.profile);
         username=root.findViewById(R.id.profile_username);
         balance=root.findViewById(R.id.balance);
         wishlist=root.findViewById(R.id.button_wishlist);
+        friends=root.findViewById(R.id.button_friends);
         signout=root.findViewById(R.id.button_signout);
         library=root.findViewById(R.id.button_library);
         String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -102,6 +104,13 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getContext(), MyWishlist.class);
+                startActivity(intent);
+            }
+        });
+        friends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), FriendsListActivity.class);
                 startActivity(intent);
             }
         });

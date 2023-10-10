@@ -35,9 +35,9 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
     }
 
     public void onBindViewHolder(@NonNull FriendsListAdapter.ViewHolder holder, int position) {
-        User friend = friendsList.get(position);
+        final User friend = friendsList.get(position);
         holder.friendNameTextView.setText(friend.getUsername());
-        holder.friendStatusTextView.setText(friend.getStatus());
+        holder.friendStatusTextView.setText("on line");
         if(friend.getProfileUrl()!=null){
             Glide.with(context).load(friend.getProfileUrl()).into(holder.friendPhotoImageView);
         }
@@ -47,18 +47,10 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
             public void onClick(View view) {
             Intent intent=new Intent(context, ChatActivity.class);
             intent.putExtra("friend",friend);
+            if(friend == null) System.out.println("!!!!!!!!!!!");
             context.startActivity(intent);
         }
         });
-
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent=new Intent(context, ChatActivity.class);
-//                intent.putExtra("friend",friend);
-//                context.startActivity(intent);
-//            }
-//        });
     }
     public int getItemCount(){
         return friendsList.size();
