@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.News;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.myapplication.Game;
+import com.example.myapplication.GameDetail;
+import com.example.myapplication.R;
 
 import java.util.List;
 
@@ -46,7 +49,7 @@ public class NewsGameAdapter extends RecyclerView.Adapter<NewsGameAdapter.MyView
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context,GameDetail.class);
+                Intent intent=new Intent(context, GameDetail.class);
                 intent.putExtra("game",gameList.get(position));
                 context.startActivity(intent);
             }

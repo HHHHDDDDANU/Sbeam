@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Profile;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -19,6 +19,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.myapplication.LibraryAndWishlist.MyLibrary;
+import com.example.myapplication.LibraryAndWishlist.MyWishlist;
+import com.example.myapplication.R;
+import com.example.myapplication.User;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,6 +36,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import com.example.myapplication.LoginAndSignup.SignActivity;
 
 /**
  * @author u7574421 Simon Fu
@@ -64,7 +70,7 @@ public class ProfileFragment extends Fragment {
                         if (uri != null) {
                             Glide.with(getActivity()).load(uri).into(profile);
                             StorageReference storageRef = FirebaseStorage.getInstance().getReference();
-                            StorageReference imageRef = storageRef.child("images/" + uri.getLastPathSegment());  // you can also use a custom file name
+                            StorageReference imageRef = storageRef.child("images/" + uri.getLastPathSegment());
                             UploadTask uploadTask = imageRef.putFile(uri);
 
                             uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
@@ -92,6 +98,8 @@ public class ProfileFragment extends Fragment {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String usernameString=FirebaseAuth.getInstance().getCurrentUser().getEmail().split("@")[0];
+                username.setText("Hello, "+usernameString);
                 user=dataSnapshot.getValue(User.class);
                 balance.setText("$"+user.getBalance());
                 Glide.with(getContext()).load(user.getProfileUrl()).into(profile);
@@ -112,7 +120,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent=new Intent(getContext(),SignActivity.class);
+                Intent intent=new Intent(getContext(), SignActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }

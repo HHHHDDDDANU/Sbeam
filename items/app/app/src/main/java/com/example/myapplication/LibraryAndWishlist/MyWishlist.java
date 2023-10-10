@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.LibraryAndWishlist;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.example.myapplication.Game;
+import com.example.myapplication.GameList.GameListAdapter;
+import com.example.myapplication.R;
+import com.example.myapplication.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

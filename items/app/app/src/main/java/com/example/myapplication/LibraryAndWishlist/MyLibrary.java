@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.LibraryAndWishlist;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.myapplication.Game;
+import com.example.myapplication.LibraryAndWishlist.LibraryListAdapter;
+import com.example.myapplication.R;
+import com.example.myapplication.User;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

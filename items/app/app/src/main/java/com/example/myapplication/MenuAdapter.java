@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.myapplication.GameList.GameListFragment;
+import com.example.myapplication.News.NewsFragment;
+import com.example.myapplication.Profile.ProfileFragment;
+
 /**
  * @author u7574421 Simon Fu
  * This is an adapter class, used to adapt the tablayout and viewpager of the main interface to each other.
