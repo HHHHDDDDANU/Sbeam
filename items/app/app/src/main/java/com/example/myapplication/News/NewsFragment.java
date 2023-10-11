@@ -74,6 +74,7 @@ public class NewsFragment extends Fragment {
             @Override
             public void run() {
                 // set event listener for glide, start animation when load an url into imageview
+                if(isAdded()){
                 Glide.with(getActivity())
                         .load(PreLoadedData.urls.get(currentIndex))
                         .listener(new RequestListener<Drawable>() {
@@ -92,7 +93,7 @@ public class NewsFragment extends Fragment {
                         .into(slide);
                 currentIndex = (currentIndex + 1) % PreLoadedData.urls.size();
                 handler.postDelayed(this, 2000);
-            }
+            }}
         };
         handler.postDelayed(runnable, 2000);
 
