@@ -43,9 +43,19 @@ public class FriendsListActivity extends AppCompatActivity {
 
         friendsList = new ArrayList<>();
         friendsUserName = new ArrayList<>();
-
         String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
-        String url = String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl());
+        FirebaseDatabase.getInstance().getReference("users").child(uid).addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                user=dataSnapshot.getValue(User.class);
+                Glide.with(getApplicationContext()).load(user.getProfileUrl()).into(userphoto);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.w("Firebase", "loadPost:onCancelled", databaseError.toException());
+            }
+        });
         username.setText(uid);
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("friendsList").child(uid);
 
