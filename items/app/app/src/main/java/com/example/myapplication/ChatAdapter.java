@@ -19,9 +19,9 @@ import java.util.List;
 public class ChatAdapter extends ArrayAdapter<ChatMessage>{
     private Context context;
     private ArrayList<ChatMessage> chat_log;
-    private String myPhotoUrl;
+    private ArrayList<String> myPhotoUrl;
     private User friend;
-    public ChatAdapter(Context context, ArrayList<ChatMessage> chat_log, String myPhotoUrl, User friend){
+    public ChatAdapter(Context context, ArrayList<ChatMessage> chat_log, ArrayList<String> myPhotoUrl, User friend){
         super(context, 0, chat_log);
         this.context = context;
         this.chat_log = chat_log;
@@ -55,7 +55,7 @@ public class ChatAdapter extends ArrayAdapter<ChatMessage>{
 
             myMessage.setText(message.getMessage());
             if(myPhotoUrl!=null){
-                Glide.with(context).load(myPhotoUrl).into(myPhoto);
+                Glide.with(context).load(myPhotoUrl.get(0)).into(myPhoto);
             }
         }
 

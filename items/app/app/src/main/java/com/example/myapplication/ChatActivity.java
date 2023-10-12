@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,7 +30,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
  public class ChatActivity extends AppCompatActivity {
-    private User currentUser;
+    private User currentUser=new User();
     private ChatAdapter chatAdapter;
     private ArrayList<ChatMessage> chatLog;
     private ListView chatListView;
@@ -37,6 +38,7 @@ import com.google.firebase.database.ValueEventListener;
     private EditText inputText;
     private Button buttonSend;
     private TextView chat_name;
+    private ArrayList<String> myPhotoUrl=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +48,26 @@ import com.google.firebase.database.ValueEventListener;
 
         chatLog = new ArrayList<ChatMessage>();
         String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
-        String myPhotoUrl = String.valueOf(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl());
         inputText = findViewById(R.id.input_text);
         buttonSend = findViewById(R.id.chat_send_button);
         chat_name = findViewById(R.id.chat_name);
         chat_name.setText(uid);
+        myPhotoUrl.add("");
+        FirebaseDatabase.getInstance().getReference("users").child(uid).addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                currentUser=dataSnapshot.getValue(User.class);
+                myPhotoUrl.clear();
+                myPhotoUrl.add(currentUser.getProfileUrl());
+                chatAdapter.notifyDataSetChanged();
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.w("Firebase", "loadPost:onCancelled", databaseError.toException());
+            }
+        });
 
         buttonSend.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -82,7 +99,7 @@ import com.google.firebase.database.ValueEventListener;
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int count = (int) snapshot.getChildrenCount();
-
+                    chatLog.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     chatLog.add(dataSnapshot.getValue(ChatMessage.class));
                     chatAdapter.notifyDataSetChanged();
