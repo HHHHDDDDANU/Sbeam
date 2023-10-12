@@ -101,7 +101,10 @@ public class ProfileFragment extends Fragment {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String usernameString=FirebaseAuth.getInstance().getCurrentUser().getEmail().split("@")[0];
+                String usernameString="";
+                if(FirebaseAuth.getInstance().getCurrentUser()!=null) {
+                    usernameString = FirebaseAuth.getInstance().getCurrentUser().getEmail().split("@")[0];
+                }
                 username.setText("Hello, "+usernameString);
                 user=dataSnapshot.getValue(User.class);
                 balance.setText("$"+user.getBalance());

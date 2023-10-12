@@ -39,6 +39,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * @author u7574421 Simon Fu
@@ -67,31 +68,33 @@ public class NewsFragment extends Fragment {
         newGameAdapter=new NewsGameAdapter(newGames,getContext());
         recommended.setAdapter(recommendedAdapter);
         newgame.setAdapter(newGameAdapter);
-
         // set handler for slide imageview
         Handler handler = new Handler(Looper.getMainLooper());
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                // set event listener for glide, start animation when load an url into imageview
-                Glide.with(getActivity())
-                        .load(PreLoadedData.urls.get(currentIndex))
-                        .listener(new RequestListener<Drawable>() {
-                            @Override
-                            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                                return false;
-                            }
-                            @Override
-                            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                                // fade in animation
-                                Animation in = AnimationUtils.makeInAnimation(getActivity(), true);
-                                slide.startAnimation(in);
-                                return false;
-                            }
-                        })
-                        .into(slide);
-                currentIndex = (currentIndex + 1) % PreLoadedData.urls.size();
-                handler.postDelayed(this, 2000);
+                if (isAdded()) {
+                    // set event listener for glide, start animation when load an url into imageview
+                    Glide.with(requireActivity())
+                            .load(PreLoadedData.urls.get(currentIndex))
+                            .listener(new RequestListener<Drawable>() {
+                                @Override
+                                public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                    return false;
+                                }
+
+                                @Override
+                                public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                    // fade in animation
+                                    Animation in = AnimationUtils.makeInAnimation(getActivity(), true);
+                                    slide.startAnimation(in);
+                                    return false;
+                                }
+                            })
+                            .into(slide);
+                    currentIndex = (currentIndex + 1) % PreLoadedData.urls.size();
+                    handler.postDelayed(this, 2000);
+                }
             }
         };
         handler.postDelayed(runnable, 2000);
