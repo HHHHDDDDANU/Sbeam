@@ -38,6 +38,7 @@ import com.google.firebase.database.ValueEventListener;
     private EditText inputText;
     private Button buttonSend;
     private TextView chat_name;
+    private ImageView friend_photo;
     private ArrayList<String> myPhotoUrl=new ArrayList<>();
 
     @Override
@@ -45,13 +46,17 @@ import com.google.firebase.database.ValueEventListener;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         friend = (User)getIntent().getSerializableExtra("friend");
-
         chatLog = new ArrayList<ChatMessage>();
         String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
         inputText = findViewById(R.id.input_text);
         buttonSend = findViewById(R.id.chat_send_button);
         chat_name = findViewById(R.id.chat_name);
-        chat_name.setText(uid);
+        friend_photo = findViewById(R.id.chat_friend_photo);
+        if(friend.getProfileUrl()!=null){
+            Glide.with(getApplicationContext()).load(friend.getProfileUrl()).into(friend_photo);
+        }
+        String nickname = friend.getEmailAddress().split("@")[0];
+        chat_name.setText(nickname);
         myPhotoUrl.add("");
         FirebaseDatabase.getInstance().getReference("users").child(uid).addValueEventListener(new ValueEventListener() {
 
@@ -61,7 +66,6 @@ import com.google.firebase.database.ValueEventListener;
                 myPhotoUrl.clear();
                 myPhotoUrl.add(currentUser.getProfileUrl());
                 chatAdapter.notifyDataSetChanged();
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -93,7 +97,6 @@ import com.google.firebase.database.ValueEventListener;
                 }
             }
         });
-
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("friendsList").child(uid).child(friend.getUsername());
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -104,16 +107,12 @@ import com.google.firebase.database.ValueEventListener;
                     chatLog.add(dataSnapshot.getValue(ChatMessage.class));
                     chatAdapter.notifyDataSetChanged();
                 }
-
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.w("Firebase", "loadPost:onCancelled", error.toException());
             }
         });
-
         chatAdapter = new ChatAdapter(this,chatLog, myPhotoUrl, friend);
         chatListView = findViewById(R.id.chat_log);
         chatListView.setAdapter(chatAdapter);

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +37,8 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
 
     public void onBindViewHolder(@NonNull FriendsListAdapter.ViewHolder holder, int position) {
         final User friend = friendsList.get(position);
-        holder.friendNameTextView.setText(friend.getUsername());
+        String friend_name = friend.getEmailAddress().split("@")[0];
+        holder.friendNameTextView.setText(friend_name);
         holder.friendStatusTextView.setText("on line");
         if(friend.getProfileUrl()!=null){
             Glide.with(context).load(friend.getProfileUrl()).into(holder.friendPhotoImageView);
@@ -47,7 +49,6 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
             public void onClick(View view) {
             Intent intent=new Intent(context, ChatActivity.class);
             intent.putExtra("friend",friend);
-            if(friend == null) System.out.println("!!!!!!!!!!!");
             context.startActivity(intent);
         }
         });

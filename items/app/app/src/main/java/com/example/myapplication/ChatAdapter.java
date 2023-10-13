@@ -58,8 +58,6 @@ public class ChatAdapter extends ArrayAdapter<ChatMessage>{
                 Glide.with(context).load(myPhotoUrl.get(0)).into(myPhoto);
             }
         }
-
-
         return convertView;
     }
 

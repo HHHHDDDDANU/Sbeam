@@ -13,9 +13,9 @@ public class User implements Serializable {
     private int balance;
     private int status;
     private ArrayList<Game> wishlist;
-
     private ArrayList<Game> library;
     private ArrayList<User> friends;
+    private String emailAddress;
     public User(){}
 
     public User(String username, String profileUrl, int balance, int status,ArrayList<Game> wishlist, ArrayList<User> friends,ArrayList<Game> library) {
@@ -76,4 +76,6 @@ public class User implements Serializable {
     public void setLibrary(ArrayList<Game> library) {
         this.library = library;
     }
+    public void setEmailAddress(String emailAddress){ this.emailAddress = emailAddress;}
+    public String getEmailAddress(){ return emailAddress;}
 }

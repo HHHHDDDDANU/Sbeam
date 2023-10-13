@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:text="FRIENDS_NAME"
+            android:maxLines="1"
             android:textSize="22sp"
             android:gravity="left"
             android:textColor="@color/white">
@@ -44,7 +45,7 @@
         android:id="@+id/friend_operate_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="chat">
+        android:text="Chat">
 
     </Button>
 

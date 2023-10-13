@@ -44,11 +44,14 @@ public class FriendsListActivity extends AppCompatActivity {
         friendsList = new ArrayList<>();
         friendsUserName = new ArrayList<>();
         String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        if(FirebaseAuth.getInstance().getCurrentUser()!=null) {
+            username.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail().split("@")[0]);
+        }
         FirebaseDatabase.getInstance().getReference("users").child(uid).addValueEventListener(new ValueEventListener() {
-
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user=dataSnapshot.getValue(User.class);
+                user.setEmailAddress(FirebaseAuth.getInstance().getCurrentUser().getEmail());
                 Glide.with(getApplicationContext()).load(user.getProfileUrl()).into(userphoto);
             }
             @Override
@@ -56,9 +59,7 @@ public class FriendsListActivity extends AppCompatActivity {
                 Log.w("Firebase", "loadPost:onCancelled", databaseError.toException());
             }
         });
-        username.setText(uid);
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("friendsList").child(uid);
-
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
