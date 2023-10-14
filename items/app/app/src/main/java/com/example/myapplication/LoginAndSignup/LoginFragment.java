@@ -2,6 +2,7 @@ package com.example.myapplication.LoginAndSignup;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,16 @@ import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.MainInterface;
 import com.example.myapplication.R;
+import com.example.myapplication.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * @author u7574421 Simon Fu
@@ -46,6 +53,20 @@ public class LoginFragment extends Fragment {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success
+                                    String uid=FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                    DatabaseReference user_reference = FirebaseDatabase.getInstance().getReference("users").child(uid);
+                                    user_reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            User user = snapshot.getValue(User.class);
+                                            user.setStatus(1);
+                                            user_reference.setValue(user);
+                                        }
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+                                            Log.w("Firebase", "loadPost:onCancelled", error.toException());
+                                        }
+                                    });
                                     Intent intent=new Intent(getActivity(), MainInterface.class);
                                     startActivity(intent);
                                 } else {

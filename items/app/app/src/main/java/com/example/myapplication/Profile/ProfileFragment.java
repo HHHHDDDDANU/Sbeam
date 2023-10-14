@@ -132,6 +132,22 @@ public class ProfileFragment extends Fragment {
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String uid=FirebaseAuth.getInstance().getCurrentUser().getUid();
+                DatabaseReference user_reference = FirebaseDatabase.getInstance().getReference("users").child(uid);
+                user_reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        User user = snapshot.getValue(User.class);
+                        user.setStatus(0);
+                        user_reference.setValue(user);
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Log.w("Firebase", "loadPost:onCancelled", error.toException());
+                    }
+                });
+
                 FirebaseAuth.getInstance().signOut();
                 Intent intent=new Intent(getContext(), SignActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
