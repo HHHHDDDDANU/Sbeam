@@ -76,6 +76,8 @@ public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.
         }
         if(friend.getProfileUrl()!=null){
             Glide.with(context).load(friend.getProfileUrl()).into(holder.friendPhotoImageView);
+        }else{
+            Glide.with(context).load(R.mipmap.ic_launcher).into(holder.friendPhotoImageView);
         }
 
         LinearLayout linearLayout = holder.friendLinearLayout;
