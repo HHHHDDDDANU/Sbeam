@@ -51,6 +51,7 @@ public class GameDetail extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user=dataSnapshot.getValue(User.class);
+                // if the game is already in user's wishlist, then change the button text
                 if(user.getWishlist()!=null){
                     if(user.getWishlist().contains(game)){
                         addToWishlist.setText("Remove from wishlist");
@@ -98,11 +99,13 @@ public class GameDetail extends AppCompatActivity {
                 if(user.getWishlist()!=null){
                     // update user data in firebase
                     if(user.getWishlist().contains(game)){
+                        // if the game is already in wishlist, remove it from wishlist then update database
                         removeFromWishlist();
                         FirebaseDatabase.getInstance().getReference().child("users").child(user.getUsername()).setValue(user);
                         Toast.makeText(getApplicationContext(), "Remove from wishlist successfully",
                                 Toast.LENGTH_SHORT).show();
                     }else {
+                        // if the game is not in wishlist, add it to wishlist then update database
                         addToWishlist();
                         FirebaseDatabase.getInstance().getReference().child("users").child(user.getUsername()).setValue(user);
                         Toast.makeText(getApplicationContext(), "Add to wishlist successfully",
@@ -116,6 +119,7 @@ public class GameDetail extends AppCompatActivity {
                 }
             }
         });
+        // set the onclick event for BUY button
         buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,6 +136,13 @@ public class GameDetail extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * this function defines the buy game action.
+     * @return return 0 if the game is purchased successfully
+     * return 1 if user already own this game
+     * return 2 if user doesn't have enough money to buy
+     */
     public int buyGame(){
         if(user.getBalance()>=game.getPrice()){
             ArrayList<Game> library;
@@ -165,6 +176,7 @@ public class GameDetail extends AppCompatActivity {
         wishlist.add(game);
         user.setWishlist(wishlist);
     }
+    // remove the game from user's wishlist
     public void removeFromWishlist(){
         ArrayList<Game> wishlist=user.getWishlist();
         wishlist.remove(game);

@@ -44,6 +44,7 @@ public class MyLibrary extends AppCompatActivity {
         String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users").child(uid);
         reference.addValueEventListener(new ValueEventListener() {
+            // read library list from database if the data changes
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 user=dataSnapshot.getValue(User.class);

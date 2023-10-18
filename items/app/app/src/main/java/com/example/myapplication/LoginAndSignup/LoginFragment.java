@@ -59,6 +59,7 @@ public class LoginFragment extends Fragment {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             User user = snapshot.getValue(User.class);
+                                            // change the user status after sign in
                                             user.setStatus(1);
                                             user_reference.setValue(user);
                                         }
@@ -78,6 +79,7 @@ public class LoginFragment extends Fragment {
                         });
             }
         });
+        // set the onclick event for "forgot password"
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

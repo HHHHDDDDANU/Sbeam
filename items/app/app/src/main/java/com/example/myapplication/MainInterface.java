@@ -29,6 +29,7 @@ public class MainInterface extends AppCompatActivity {
         MenuAdapter adapter=new MenuAdapter(this);
         viewPager.setAdapter(adapter);
         viewPager.setUserInputEnabled(false);
+        // add three tab text to tablayout
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
                     switch (position) {

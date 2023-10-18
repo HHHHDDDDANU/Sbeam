@@ -58,6 +58,7 @@ public class GameListFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = sort.get(position);
+                // set sort by price
                 if(selectedItem.equals("PRICE")){
                     Collections.sort(games, new Comparator<Game>() {
                         @Override
@@ -66,6 +67,7 @@ public class GameListFragment extends Fragment {
                         }
                     });
                     adapter.notifyDataSetChanged();
+                // set sort by name
                 }else if(selectedItem.equals("NAME")){
                     Collections.sort(games, new Comparator<Game>() {
                         @Override

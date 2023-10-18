@@ -46,6 +46,7 @@ public class MyWishlist extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // read wishlist from database if the data changes
                 user=dataSnapshot.getValue(User.class);
                 games.clear();
                 if(user.getWishlist()!=null) {

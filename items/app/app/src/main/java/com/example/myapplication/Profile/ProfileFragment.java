@@ -69,7 +69,7 @@ public class ProfileFragment extends Fragment {
                 new ActivityResultContracts.GetContent(),
                 new ActivityResultCallback<Uri>() {
                     @Override
-                    public void onActivityResult(Uri uri) {
+                    public void onActivityResult(Uri uri) {  // read the profile url from database if there is a change on data
                         if (uri != null) {
                             Glide.with(getActivity()).load(uri).into(profile);
                             StorageReference storageRef = FirebaseStorage.getInstance().getReference();
@@ -77,6 +77,7 @@ public class ProfileFragment extends Fragment {
                             UploadTask uploadTask = imageRef.putFile(uri);
 
                             uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                                // upload a profile image
                                 @Override
                                 public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
                                     if (!task.isSuccessful()) {
@@ -85,6 +86,7 @@ public class ProfileFragment extends Fragment {
                                     return imageRef.getDownloadUrl();
                                 }
                             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                // save the uploaded image to database
                                 @Override
                                 public void onComplete(@NonNull Task<Uri> task) {
                                     if (task.isSuccessful()) {
@@ -98,7 +100,7 @@ public class ProfileFragment extends Fragment {
                     }
                 });
         reference.addValueEventListener(new ValueEventListener() {
-
+            // read the user's name from database, then load it to TextView
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String usernameString="";
@@ -115,6 +117,7 @@ public class ProfileFragment extends Fragment {
                 Log.w("Firebase", "loadPost:onCancelled", databaseError.toException());
             }
         });
+        // set onclick event for wishlist button
         wishlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,6 +125,7 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        // set on click event for friends button
         friends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -129,6 +133,7 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        // set on click event for sign out button
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,6 +143,7 @@ public class ProfileFragment extends Fragment {
                 user_reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        // set the user status when sign out
                         User user = snapshot.getValue(User.class);
                         user.setStatus(0);
                         user_reference.setValue(user);
@@ -147,19 +153,21 @@ public class ProfileFragment extends Fragment {
                         Log.w("Firebase", "loadPost:onCancelled", error.toException());
                     }
                 });
-
+                // return to sign in page
                 FirebaseAuth.getInstance().signOut();
                 Intent intent=new Intent(getContext(), SignActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });
+        // when click on profile image, start upload action
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 uploadIMG.launch("image/*");
             }
         });
+        // set the onclick event for library button
         library.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

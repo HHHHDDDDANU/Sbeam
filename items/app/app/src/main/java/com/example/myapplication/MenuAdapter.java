@@ -18,6 +18,11 @@ public class MenuAdapter extends FragmentStateAdapter {
         super(activity);
     }
 
+    /**
+     * Three fragments are attached to this adapter, which are news, game list and profile.
+     * @param position
+     * @return
+     */
     @NonNull
     @Override
     public Fragment createFragment(int position) {

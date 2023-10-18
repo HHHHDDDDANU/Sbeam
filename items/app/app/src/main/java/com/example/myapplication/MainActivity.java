@@ -27,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // load preloaded data from firebase databse to PreoloadedData singleton
         StorageReference newsSlideRef = FirebaseStorage.getInstance().getReference().child("news_slide");
         String[] fileNames={"slide1.jpg","slide2.jpg","slide3.jpg","slide4.jpg"};
+        // read all images used for news tab
         for (String fileName : fileNames) {
             StorageReference fileRef = newsSlideRef.child(fileName);
             fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+        // set a delay for loading screen
         Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(new Runnable() {
             @Override
