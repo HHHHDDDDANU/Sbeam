@@ -10,18 +10,18 @@ The following markdown document is a checklist of items you **should** complete 
 ## Documents (all non-android files) located in a folder named `items`
 - [X] A conflict resolution protocol is documented and well-defined.
 - [X] All Team Meeting Minutes (at least 4, with links in the report). 
-- [ ] Create ONE video titled  `features.(mp4|mov)` that demonstrates each implemented feature (basic + general), in the same order as listed in the report. Max. 3 minutes.
-- [ ] A working standalone **APK** that can be loaded and execute correctly on an AVD (see [demo video](media/_examples/COMP2100APKGenerationGroupAssignment.mp4)).
+- [X] Create ONE video titled  `features.(mp4|mov)` that demonstrates each implemented feature (basic + general), in the same order as listed in the report. Max. 3 minutes.
+- [X] A working standalone **APK** that can be loaded and execute correctly on an AVD (see [demo video](media/_examples/COMP2100APKGenerationGroupAssignment.mp4)).
 - [ ] **Report**: Completed the markdown report document titled [report.md](report.md).
-- [ ] **Statement of Originality**: All members have read and signed the [statement of originality](statement-of-originality.yml). Failure to do so will result in zero marks.
+- [X] **Statement of Originality**: All members have read and signed the [statement of originality](statement-of-originality.yml). Failure to do so will result in zero marks.
 - [X] All external code, assets or help received outside the group is documented in the [statement of originality](statement-of-originality.yml) and relevant parts in the code.
 
 ## Report Checklist
 We advise you to use the provided template when writing your report (it will help you cover everything necessary).
 Please remove all instructions and sample content (example reasonable parts such as headings) 
 in the templates for both report and meeting minutes before submitting.
-- [ ] The UID, name and roles (team structure) of all group members.
-- [ ] A summary of individual contributions is well detailed by each member, with links to the key code contributions.
+- [X] The UID, name and roles (team structure) of all group members.
+- [X] A summary of individual contributions is well detailed by each member, with links to the key code contributions.
 - [X] A description of your application.
 - [X] Examples/use cases of your application.
 - [X] A UML diagram of your application (e.g. class diagram).
@@ -35,11 +35,11 @@ in the templates for both report and meeting minutes before submitting.
 
 ## Individual Reflections
 Please note that each member must complete their individual submissions for the following items on Wattle (same due date as the project submission).
-- [ ] All members have submitted their peer- and self-evaluation and individual reflection as instructed on Wattle.
+- [X] All members have submitted their peer- and self-evaluation and individual reflection as instructed on Wattle.
 
 ## Helpful (Optional)
 The following are some optional items that are conducive to your final marks. These are not necessary for your final submission but will assist in achieving a higher overall mark. Feel free to add additional items here for your own team to keep track of!
-- [ ] Each team member understands how the whole application (including sections they may not have worked on) operate.
+- [X] Each team member understands how the whole application (including sections they may not have worked on) operate.
 - [X] The project files are well categorised and structured in different packages based on their functionalities.
 - [ ] The code is well commented, with @author annotations in ALL java files at minimum.
 - [X] Make meaningful names of the variables and methods.
