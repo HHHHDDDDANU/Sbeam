@@ -24,7 +24,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-
+/**
+ * @author u7618768 Connor Li
+ * Friend list (re).
+ */
 public class FriendsListAdapter extends RecyclerView.Adapter<FriendsListAdapter.ViewHolder> {
     private Context context;
     private ArrayList<User> friendsList;

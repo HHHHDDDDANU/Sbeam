@@ -1,5 +1,10 @@
 package com.example.myapplication;
 
+/**
+ * @author u7618768 Connor Li
+ * Chat Message.
+ */
+
 public class ChatMessage {
     //private int index;
     private String message;

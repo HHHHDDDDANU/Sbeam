@@ -29,7 +29,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
+/**
+ * @author u7618768 Connor Li
+ * Friend list.
+ */
 
 public class FriendsListActivity extends AppCompatActivity {
 

@@ -16,6 +16,11 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author u7618768 Connor Li
+ * Chat Adpater.
+ */
+
 public class ChatAdapter extends ArrayAdapter<ChatMessage>{
     private Context context;
     private ArrayList<ChatMessage> chat_log;

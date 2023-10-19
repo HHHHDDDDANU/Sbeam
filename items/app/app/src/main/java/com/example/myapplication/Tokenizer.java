@@ -4,6 +4,12 @@ import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+/**
+ * @author u7544341 Zehua Liu.
+ * Tokenizer.
+ */
+
 public class Tokenizer {
 
     private String name;
@@ -23,12 +29,13 @@ public class Tokenizer {
         }
     }
 
+    /**
+     * Extract the operator of the user input.
+     * @param token
+     */
     private void parseToken(String token) {
-        // delete all extra spaces;
+        // Delete all extra spaces;
         token = token.replaceAll(" ", "");
-
-        Pattern patternSign = Pattern.compile("([<>]=?|=)");
-        Pattern patternNum = Pattern.compile("\\d+");
 //        Pattern combinedPattern = Pattern.compile("([<>]=?|=)\\d+");
         Pattern combinedPattern = Pattern.compile("(year|price)(<|>|=)\\d+");
         grammarRight = combinedPattern.matcher(token).matches();
@@ -41,18 +48,6 @@ public class Tokenizer {
 
                 priceOperator = token.substring(5, 6);
                 price = Integer.parseInt(token.substring(6).trim());
-
-//            Pattern pattern = Pattern.compile("([<>]=?|=)");
-//            Matcher matcher = pattern.matcher(token);
-//            Pattern patternPrice = Pattern.compile("\\d+");
-//            Matcher matcherPrice = pattern.matcher(token);
-//          Check if any match is found and return the first one
-//            if (matcher.find()) {
-//                priceOperator = matcher.group(1);
-//            }
-//            if (matcherPrice.find()) {
-//                price = Integer.parseInt(matcherPrice.group(1));
-//            }
             }
         }
         else {
@@ -75,6 +70,11 @@ public class Tokenizer {
         return priceOperator;
     }
 
+    /**
+     * Game matches iff relevant condition satisfied.
+     * @param game
+     * @return
+     */
     public boolean matches(Game game) {
 
         if (name != null) {

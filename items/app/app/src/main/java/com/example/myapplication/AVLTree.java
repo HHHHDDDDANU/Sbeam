@@ -3,6 +3,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.ArrayList;
 
+/**
+ * @author u7618768 Connor Li
+ * This class defines the AVLTree for the Game Dataset.
+ * With insert, Rotate method, etc.
+ */
 
 public class AVLTree {
     public class AVLNode {
@@ -181,16 +186,29 @@ public class AVLTree {
             return searchByName(node.right, targetName);
     }
 
+    /**
+     *
+     * @author u7544341 Zehua Liu
+     * @param price
+     * @param operator
+     * We use inorder here to print the tree, while adding to list, we sort the game list as requested.
+     * @return
+     */
     public ArrayList<Game> inorderToList(int price, String operator) {
-        /**
-         * We use inorder here to print the tree, while adding to list, we sort the game list as requested.
-         */
         ArrayList<Game> sortedList = new ArrayList<>();
         inorderToList(root, sortedList, price, operator);
         return sortedList;
     }
 
+    /**
+     * @author u7544341 Zehua Liu
+     * @param node
+     * @param list
+     * @param price
+     * @param operator
+     */
     private void inorderToList(AVLNode node, ArrayList<Game> list, int price, String operator) {
+
         if (node == null)
             return;
 

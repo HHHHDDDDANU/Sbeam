@@ -29,6 +29,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+ /**
+  * @author u7618768 Connor Li
+  * Chat Activity.
+  */
+
  public class ChatActivity extends AppCompatActivity {
     private User currentUser=new User();
     private ChatAdapter chatAdapter;

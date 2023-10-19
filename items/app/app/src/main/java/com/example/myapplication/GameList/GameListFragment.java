@@ -107,6 +107,11 @@ public class GameListFragment extends Fragment {
             }
         });
         Button button=root.findViewById(R.id.search_button);
+
+        /**
+         * @author u7544341 Zehua Liu.
+         * Game adding method related to tokenizer.
+         */
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
