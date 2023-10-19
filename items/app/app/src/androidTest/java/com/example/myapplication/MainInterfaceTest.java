@@ -25,6 +25,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.concurrent.CountDownLatch;
+/**
+ * @author u7587847 Yongsong
+ * This class use espresso to test if user could log in maininterface
+ */
 
 @RunWith(AndroidJUnit4.class)
 public class MainInterfaceTest {
@@ -38,7 +42,6 @@ public class MainInterfaceTest {
         private ResourceCallback resourceCallback;
         private boolean isIdle = false;
 
-        // 实现IdlingResource接口的方法
 
         @Override
         public String getName() {
@@ -63,19 +66,7 @@ public class MainInterfaceTest {
             }
         }
     }
-    CustomIdlingResource customIdlingResource;
-//    @Before
-//    public void setUp() {
-//
-//        customIdlingResource = new CustomIdlingResource();
-//        IdlingRegistry.getInstance().register(customIdlingResource);
-//    }
-//
-//    @After
-//    public void tearDown() {
-//
-//        IdlingRegistry.getInstance().unregister(customIdlingResource);
-//    }
+
 
     @Rule
     public ActivityScenarioRule<MainInterface> mActivityRule = new ActivityScenarioRule<>(MainInterface.class);
@@ -116,7 +107,7 @@ public class MainInterfaceTest {
         Thread.sleep(500);
         customIdlingResource.setIdle(true);
         IdlingRegistry.getInstance().unregister(customIdlingResource);
-        onView(withId(R.id.game_list)).check(matches(isDisplayed()));
+        onView(withId(R.id.news_slide)).check(matches(isDisplayed()));
 
 
         onView(withId(R.id.main_viewpager)).perform(swipeRight());
@@ -129,17 +120,5 @@ public class MainInterfaceTest {
 
 
     }
-//    @Test
-//    public void SwipeTwoTimesTest() throws InterruptedException {
-//        onView(withId(R.id.main_viewpager)).perform(swipeLeft()).perform(swipeLeft());
-//        CustomIdlingResource customIdlingResource = new CustomIdlingResource();
-//        IdlingRegistry.getInstance().register(customIdlingResource);
-//        customIdlingResource.setIdle(false);
-//        Thread.sleep(500);
-//        customIdlingResource.setIdle(true);
-//        onView(withId(R.id.profile)).check(matches(isDisplayed()));
-//        IdlingRegistry.getInstance().unregister(customIdlingResource);
-//
-//
-//    }
+
 }

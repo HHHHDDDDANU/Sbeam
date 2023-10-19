@@ -21,9 +21,8 @@ import org.junit.runner.RunWith;
 
 
 /**
- * Instrumented test, which will execute on an Android device.
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
+ * @author u7587847 Yongsong
+ * This class use espresso to test if user could log in reset passport interface
  */
 @RunWith(AndroidJUnit4.class)
 public class ResetTest {
