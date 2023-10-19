@@ -36,6 +36,9 @@ assets:
   # - comment: "_Bliss_ by Charles O'Rear"
   #   url: https://en.wikipedia.org/wiki/Bliss_(image)
   #   licence: fair use
+  - comment: "some images are from Steam"
+    url: https://store.steampowered.com/
+    licence: fair use
 
 
 ### Questions (answer before final submission):
