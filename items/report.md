@@ -23,7 +23,7 @@
 | -------- | -------------- | ---------------------------------------- |
 | U7574421 | Simon Fu       | Overall UI design and Firebase integrate |
 | U7544341 | Zehua Liu      | Program Developer (Search)               |
-|          |                |                                          |
+| U7587847 | Yongsong Xiao  | Basic UI and founction tests             |
 |          |                |                                          |
 
  
