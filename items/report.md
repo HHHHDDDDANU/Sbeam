@@ -1,18 +1,6 @@
-# [G0 - Team Name] Report
+# [G27 - Team Name] Report
 
-The following is a report template to help your team successfully provide all the details necessary for your report in a structured and organised manner. Please give a straightforward and concise report that best demonstrates your project. Note that a good report will give a better impression of your project to the reviewers.
 
-Note that you should have removed ALL TEMPLATE/INSTRUCTION textes in your submission (like the current sentence), otherwise it hampers the professionality in your documentation.
-
-*Here are some tips to write a good report:*
-
-* `Bullet points` are allowed and strongly encouraged for this report. Try to summarise and list the highlights of your project (rather than give long paragraphs).*
-
-* *Try to create `diagrams` for parts that could greatly benefit from it.*
-
-* *Try to make your report `well structured`, which is easier for the reviewers to capture the necessary information.*
-
-*We give instructions enclosed in square brackets [...] and examples for each sections to demonstrate what are expected for your project report. Note that they only provide part of the skeleton and your description should be more content-rich. Quick references about markdown by [CommonMark](https://commonmark.org/help/)*
 
 ## Table of Contents
 
@@ -20,285 +8,270 @@ Note that you should have removed ALL TEMPLATE/INSTRUCTION textes in your submis
 2. [Summary of Individual Contributions](#summary-of-individual-contributions)
 3. [Application Description](#application-description)
 4. [Application UML](#application-uml)
-5. [Application Design and Decisions](#application-design-and-decisions)
+5. [Application Design and Decisions](#code-design-and-decision)
 6. [Summary of Known Errors and Bugs](#summary-of-known-errors-and-bugs)
 7. [Testing Summary](#testing-summary)
 8. [Implemented Features](#implemented-features)
-9. [Team Meetings](#team-meetings)
+9. [Team Meetings](#meeting-records)
 10. [Conflict Resolution Protocol](#conflict-resolution-protocol)
 
-## Administrative
-- Firebase Repository Link: <insert-link-to-firebase-repository>
-   - Confirm: I have already added comp21006442@gmail.com as a Developer to the Firebase project prior to due date.
-- Two user accounts for markers' access are usable on the app's APK (do not change the username and password unless there are exceptional circumstances. Note that they are not real e-mail addresses in use):
-   - Username: comp2100@anu.edu.au	Password: comp2100
-   - Username: comp6442@anu.edu.au	Password: comp6442
 
-## Team Members and Roles
-The key area(s) of responsibilities for each member
 
-| UID   |  Name  |   Role |
-|:------|:------:|-------:|
-| [uid] | [name] | [role] |
-| [uid] | [name] | [role] |
-| [uid] | [name] | [role] |
-| [uid] | [name] | [role] |
+# **Team Members and Roles**
 
+| *UID*    | *Name* | *Role*                           |
+| -------- | -------------- | ---------------------------------------- |
+| U7574421 | Simon Fu       | Overall UI design and Firebase integrate |
+|          |                |                                          |
+|          |                |                                          |
+|          |                |                                          |
 
-## Summary of Individual Contributions
+ 
 
-Specific details of individual contribution of each member to the project.
+# **Summary of individual contributions**
 
-Each team member is responsible for writing **their own subsection**.
+**A)** **U7574421, Simon Fu**
 
-A generic summary will not be acceptable and may result in a significant lose of marks.
+- **Code contribution in the final app**
+  - **Base class design** - Class User: User.java, Class Game: Game.java
+  - **Login and sign up design** - Class SignActivity: SignActivity.java, Class LoginFragment:LoginFragent.java, Class SignupFragment: SignupFragment.java, Class SignInAdapter: SignInAdapter.java.
+  - **Firebase database integration**
+  - **Library, game list and profile design** - Class MyLibrary: MyLibrary.java, Class MyWishlist:MyWishlist.java, Class LibraryListAdapter: LibraryListAdapter.java, Class ProfileFragment: ProfileFragment.java.
 
-*[Summarise the contributions made by each member to the project, e.g. code implementation, code design, UI design, report writing, etc.]*
+- **Code and App Design**
 
-*[Code Implementation. Which features did you implement? Which classes or methods was each member involved in? Provide an approximate proportion in pecentage of the contribution of each member to the whole code implementation, e.g. 30%.]*
+  - **Data Structure**: Arraylist.
 
-*you should ALSO provide links to the specified classes and/or functions*
-Note that the core criteria of contribution is based on `code contribution` (the technical developing of the App).
+  - **Design pattern**: Singleton, Observer and Adapter.
+  - **UI Design**: Design UI for main interface, login and signup interface, news, game detail, game 	list ,library, wishlist and profile.
 
-*Here is an example: (Note that you should remove the entire section (e.g. "others") if it is not applicable)*
+* **Others**
+  - **Report Writing**: Organize report structure and write non-individual part of report, including 	UML diagram, application description, and conflict resolution protocol.
+  - **Feature Video**: Record the features video.
 
-1. **UID1, Name1**  I have 30% contribution, as follows: <br>
-  - **Code Contribution in the final App**
-    - Feature A1, A2, A3 - class Dummy: [Dummy.java](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java)
-    - XYZ Design Pattern -  class AnotherClass: [functionOne()](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java#L22-43), [function2()](the-URL)
-    - ... (any other contribution in the code, including UI and data files) ... [Student class](../src/path/to/class/Student.java), ..., etc.*, [LanguageTranslator class](../src/path/to/class/LanguageTranslator.java): function1(), function2(), ... <br><br>
+**B)** **U7618768, Connor Li**
 
-  - **Code and App Design** 
-    - [What design patterns, data structures, did the involved member propose?]*
-    - [UI Design. Specify what design did the involved member propose? What tools were used for the design?]* <br><br>
+- **Code contribution in the final app**
+  - **Friends list degisn** - Class: FriendsListActivity.java, FriendsListAdapter.java.
+  - **Peer to peer chat function design** - Class: ChatMessage.java, ChatActivity.java, ChatAdapter.java.
+  - **AVLTree degisn** - Class: AVLTree.java.
+- **Code and App Design**
+  - **Design Pattern**: Observer, Adapter.
+  - **Data Structure**: ArrayList.
 
-  - **Others**: (only if significant and significantly different from an "average contribution") 
-    - [Report Writing?] [Slides preparation?]*
-    - [You are welcome to provide anything that you consider as a contribution to the project or team.] e.g., APK, setups, firebase* <br><br>
 
-2. **UID2, Name2**  I have xx% contribution, as follows: <br>
-  - ...
 
+# **Application Description**
 
+The app we designed is a video game library call Sbeam. It provides hundreds of games for users to lookup, and users can also buy it or add it to wishlist. Users can also add other users as friend and start a chat with them.
 
-## Application Description
 
-*[What is your application, what does it do? Include photos or diagrams if necessary]*
 
-*Here is a pet specific application example*
+### Application Case Use
 
-*PetBook is a social media application specifically targetting pet owners... it provides... certified practitioners, such as veterians are indicated by a label next to their profile...*
+Let’s say Gabe want to buy a new released game and talk about this with his friend:
 
-### Application Use Cases and or Examples
+1. Gabe first needs to sign up for an account and log in using his email. Gabe can also find his password back on the log in page if he forgets his password.
 
-*[Provide use cases and examples of people using your application. Who are the target users of your application? How do the users use your application?]*
+2. After logging in, Gabe can see some recommended game and newly released game in the news tab.
 
-*Here is a pet training application example*
+3. If Gabe didn’t find his game here, then he can navigate to the game list tab and then search it. Gabe can use the following similar grammar to search games: “gameName; price > XX; year> XX”.
 
-*Molly wants to inquiry about her cat, McPurr's recent troublesome behaviour*
-1. *Molly notices that McPurr has been hostile since...*
-2. *She makes a post about... with the tag...*
-3. *Lachlan, a vet, writes a reply to Molly's post...*
-4. ...
-5. *Molly gives Lachlan's reply a 'tick' response*
+4. Now Gabe finds the game he wants. He can enter the detail page of that game by clicking on the game. In this page, Gabe can view the detail of game, includes a short description, the publisher of the game, released data, game type and it price.
 
-*Here is a map navigation application example*
+5. If Gabe doesn’t have enough money to buy it, the he can first add it to his wishlist by click the ADD TO MY WISHLIST button. After adding it to his wishlist, Gabe can navigate to profile tab, and then enter wishlist page to check his game. Now we can see the game Starfield in his wishlist. Gabe can also remove games from his wishlist. 
 
-*Targets Users: Drivers*
+6. Now Gabe has enough money to buy this game, he can also enter the game detail page by clicking on the game in wishlist. After Gabe bought this game, he can view it on the library page, which can be access in the profile page too.
 
-* *Users can use it to navigate in order to reach the destinations.*
-* *Users can learn the traffic conditions*
-* ...
+7. Gabe wants to talk about this game with his friend, he can navigate to friend list page through profile page, and then start a conversation. 
 
-*Target Users: Those who want to find some good restaurants*
+   
 
-* *Users can find nearby restaurants and the application can give recommendations*
-* ...
+# **Application UML**
 
-*List all the use cases in text descriptions or create use case diagrams. Please refer to https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/ for use case diagram.*
+![img](file:///https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/App_Structure_Diagram.png) 
 
-<hr> 
+​	(The full image of UML diagram can be found in gitlab repository)
 
-### Application UML
+#  **Code Design and Decision**
 
-![ClassDiagramExample](media/_examples/ClassDiagramExample.png) <br>
-*[Replace the above with a class diagram. You can look at how we have linked an image here as an example of how you can do it too.]*
+- **Data Structures**
 
-<hr>
+  - **AVL Tree**
 
-## Code Design and Decisions
+    - **Objective:** Used for storing all game objects, where each game object comprises details like game price and release date. This structure facilitated quick searches based on the game price.
 
-This is an important section of your report and should include all technical decisions made. Well-written justifications will increase your marks for both the report as well as for the relevant parts (e.g., data structure). This includes, for example,
+    - **Code Locations:** Defined in AVLTree.class.
+    - **Reasons:**
+      - AVL Tree, being a balanced binary search tree, provides log(n) time complexity for search, insert, and delete operations, which makes it efficient for our purpose.
+      - Given that we used the game's price as the key, an AVL tree ensures that searches based on price are faster, allowing users to quickly find games within their budget.
+      - The nature of AVL trees automatically balancing themselves means that we avoid worst-case scenarios, ensuring consistent performance.
 
-- Details about the parser (describe the formal grammar and language used)
+  - **ArrayList**
 
-- Decisions made (e.g., explain why you chose one or another data structure, why you used a specific data model, etc.)
+    - **Objective:** Adopted for storing chat records in our app. Considering chat messages are inherently sequential and orderly, ArrayList perfectly aligns with this requirement. Furthermore, its compatibility with RecycerView aids in the visualization of chat records.
+    - **Code Locations:** Used in chatLogAdapter.java.
+    - **Reasons:**
+      - ArrayList's dynamic nature is highly efficient for our use case, as chat records can grow indefinitely. The collection adjusts its size accordingly.
+      - The integration between ArrayList and `recyclerView` in Android facilitates a seamless experience in displaying chat messages. The data structure's design is inherently suitable for binding with Android's UI components, making the visualization process straightforward and efficient.
 
-- Details about the design patterns used (where in the code, justification of the choice, etc)
+- **Design Patterns**
+  - **Singleton**: Singleton is used to store the global variables include current user, game list, recommended game and new released game. We choose to use singleton because these variable should be keep same across the whole app, and should be able to be accessed through anywhere in the app.
+  - **Observer**: Observer is used to notify all components in this app when there is a data change in firebase database. It is used because we need to keep all the data in the app consistently.
+  -  **Adapter**: Adapter is used in game list tab, library, wishlist and chat. It fits the object and RecyclerView together so that RecyclerView can display objects in different format.
 
-*Please give clear and concise descriptions for each subsections of this part. It would be better to list all the concrete items for each subsection and give no more than `5` concise, crucial reasons of your design.
+ 
 
-<hr>
+# **Summary of Known Errors and Bugs**
 
-### Data Structures
+***\*Bug 1\****: Deleting game data from firebase sometime causes app crash.
 
-*[What data structures did your team utilise? Where and why?]*
+***\*Bug 2\****: Logging in again after logging out may cause app crash.
 
-Here is a partial (short) example for the subsection `Data Structures`:*
 
-*I used the following data structures in my project:*
 
-1. *LinkedList*
-   * *Objective: used for storing xxxx for xxx feature.*
-   * *Code Locations: defined in [Class X, methods Z, Y](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java#L22-43) and [class AnotherClass, lines l1-l2](url); processed using [dataStructureHandlerMethod](url) and ...
-   * *Reasons:*
-      * *It is more efficient than Arraylist for insertion with a time complexity O(1)*
-      * *We don't need to access the item by index for xxx feature because...*
-      * For the (part), the data ... (characteristics) ...
+# **Implemented Features**
 
-2. ...
+### Basic Features:
 
-3. ...
+**1.** **[Login]**. Enable user to login using email.
 
-<hr>
+\- Code: LoginFragment.java
 
-### Design Patterns
-*[What design patterns did your team utilise? Where and why?]*
+\- User can login using and unique email and password.
 
-1. *xxx Pattern*
-   * *Objective: used for storing xxxx for xxx feature.*
-   * *Code Locations: defined in [Class X, methods Z, Y](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java#L22-43) and [class AnotherClass, lines l1-l2](url); processed using [dataStructureHandlerMethod](url) and ...
-   * *Reasons:*
-      * ...
+\- This is implemented by using Firebase Auth.
 
-<hr>
+**2.** **[DataFiles]**. DataFiles contains more than 300 games.
 
-### Parser
+\- Each game in DataFiles contains its name, type, year, producer, a short description, picture 	URL and price.
 
-### <u>Grammar(s)</u>
-*[How do you design the grammar? What are the advantages of your designs?]*
-*If there are several grammars, list them all under this section and what they relate to.*
+\- This is implemented by using Firebase database.
 
-Production Rules:
+**3.** **[LoadShowData]**. All game are loaded when enter game list tab.
 
-    <Non-Terminal> ::= <some output>
-    <Non-Terminal> ::= <some output>
+\- Code: GameListFragment.java
 
+\- A list of game will be loaded to the game list RecyclerView in game list tab.
 
-### <u>Tokenizers and Parsers</u>
+\- This is implemented by reading data from firebase database and load it into the game list 	RecyclerView.
 
-*[Where do you use tokenisers and parsers? How are they built? What are the advantages of the designs?]*
+ 
 
-<hr>
+### Custom Feature:
 
-### Others
+**Feature Category: UI Design and Testing**
 
-*[What other design decisions have you made which you feel are relevant? Feel free to separate these into their own subheadings.]*
+**1.** **[UI-Layout]**. Incorporate suitable UI layout in the tab for different activities and fragments.(easy)
 
-<br>
-<hr>
+- Code: All XML layout files.
+- This is implemented by modifying the drawable in UI, for example, use a custom item layout for recycler view. Adapt tab view in login UI and main interface by combining tablayout and pagerviewer2.
 
-## Implemented Features
-*[What features have you implemented? where, how, and why?]* <br>
-*List all features you have completed in their separate categories with their featureId. THe features must be one of the basic/custom features, or an approved feature from Voice Four Feature.*
 
-### Basic Features
-1. [LogIn]. Description of the feature ... (easy)
-   * Code: [Class X, methods Z, Y](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java#L22-43) and Class Y, ...
-   * Description of feature: ... <br>
-   * Description of your implementation: ... <br>
 
-2. [DataFiles]. Description  ... ... (...)
-   * Code to the Data File [users_interaction.json](link-to-file), [search-queries.xml](link-to-file), ...
-   * Link to the Firebase repo: ...
+**Feature Category: Greater Data Usage, Handling and Sophistication**
 
-3. ...
-   <br>
+**2.** **[Data-Profile]**. Create a Profile Page for Users or any Entities.(easy)
 
-### Custom Features
-Feature Category: Privacy <br>
-1. [Privacy-Request]. Description of the feature  (easy)
-   * Code: [Class X, methods Z, Y](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java#L22-43) and Class Y, ...
-   * Description of your implementation: ... <br>
-     <br>
+- Code: ProfileFragment.java.
 
-2. [Privacy-Block]. Description ... ... (medium)
-   ... ...
-   <br><br>
+- User can view it library, wishlist, current balance in the profile fragment. The profile also contain a picture as the user’s profile, user can upload image to update its profile. All the profile data is read from firebase database and then be updated to corresponding widget.
 
-Feature Category: Firebase Integration <br>
-3. [FB-Auth] Description of the feature (easy)
-   * Code: [Class X, entire file](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java#L22-43) and Class Y, ...
-   * [Class B](../src/path/to/class/file.java#L30-85): methods A, B, C, lines of code: 30 to 85
-   * Description of your implementation: ... <br>
 
-<hr>
 
-### Surprised Features
+**Feature Category: Firebase Integration**
 
-- If implemented, explain how your solution addresses the task (any detail requirements will be released with the surprised feature specifications).
-- State that "Suprised feature is not implemented" otherwise.
+**3.** **[FB-Auth]**. Use Firebase to implement User Authentication.(easy)
 
-<br> <hr>
+- Code: LoginFragment.java.
 
-## Summary of Known Errors and Bugs
+- User login is implemented by using firebase auth, all users’ password and email are stored in fire base.
 
-*[Where are the known errors and bugs? What consequences might they lead to?]*
-*List all the known errors and bugs here. If we find bugs/errors that your team does not know of, it shows that your testing is not thorough.*
+**4.** **[FB-Persist]**.Use Firebase to persist all data used in your app.(medium)
 
-*Here is an example:*
+- All data related to this app is stored in firebase database, including all the game objects, all users’ data and chat logs. The data in app is also updated synchronously as firebase data change, this can be achieved by calling onDataChange() method.
 
-1. *Bug 1:*
-   - *A space bar (' ') in the sign in email will crash the application.*
-   - ...
 
-2. *Bug 2:*
-3. ...
 
-<br> <hr>
+**Feature Category: User Interactivity**
 
+**5.** **[Interact-Micro]** The ability to micro-interact with items/users.(easy)
 
-## Testing Summary
+- Code: FriendListActivity.java, GameDetail.java
 
-*[What features have you tested? What is your testing coverage?]*
-*Please provide some screenshots of your testing summary, showing the achieved testing coverage. Feel free to provide further details on your tests.*
+- Allow user to interact with each game object, user can add game to wishlist or buy a game to add it to library. User can also add new friends and chat with them.
 
-*Here is an example:*
 
-1. Tests for Search
-   - Code: [TokenizerTest Class, entire file](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java) for the [Tokenizer Class, entire file](https://gitlab.cecs.anu.edu.au/comp2100/group-project/ga-23s2/-/blob/main/items/media/_examples/Dummy.java#L22-43)
-   - *Number of test cases: ...*
-   - *Code coverage: ...*
-   - *Types of tests created and descriptions: ...*
 
-2. xxx
+**Feature Category: Peer to Peer Messaging**
 
-...
+**6.[P2P-DM]** Provide users with the ability to message each other directly in private. (hard)
 
-<br> <hr>
+- Code: ChatActivity.java, ChatAdapter.java, ChatMessage
+- Allow user to chat with another user in real time.
 
+**7.[P2P-Block]** Provide users with the ability to ‘block’ and prevent another user from direct messaging them.(medium)
 
-## Team Management
+- Code: FriendsListActivity.java, FriendsListAdapter
+- User can add new friends or remove current friends from his friend list.
 
-### Meetings Records
-* Link to the minutes of your meetings like above. There must be at least 4 team meetings.
-  (each commited within 2 days aftre the meeting)
-* Your meetings should also have a reasonable date spanning across Week 6 to 11.*
+ 
 
+### Surprised Feature
+
+**1.** **[Sign up]** Allow user to sign up an account.(easy)
+
+- Code: SignUpActivity.java, ResetPassword.java
+
+- User can sign up an account using email. User can also reset password by sending an email 	to his email adress.
+
+ **2.[Interact-States]** Users can change their account status, and users can see the status of their friends in the friends list.
+
+- Code: FriendsListActivity.java
+- After logging in,the status of user is set to "online", other user can see the status through friends list.
+
+
+
+# **Meeting Records**
+
+ 
 
 - *[Team Meeting 1](meeting1.md)*
 - ...
 - ...
 - [Team Meeting 4](link_to_md_file.md)
-- ... (Add any descriptions if needed) ...
 
 <hr>
 
-### Conflict Resolution Protocol
-*[Write a well defined protocol your team can use to handle conflicts. That is, if your group has problems, what is the procedure for reaching consensus or solving a problem?
-(If you choose to make this an external document, link to it here)]*
 
-This shall include an agreed procedure for situations including (but not limited to):
-- e.g., if a member fails to meet the initial plan and/or deadlines
-- e.g., if your group has issues, how will your group reach consensus or solve the problem?
-- e.g., if a member gets sick, what is the solution? Alternatively, what is your plan to mitigate the impact of unforeseen incidents for this 6-to-8-week project? 
+# **Conflict Resolution Protocol**
+
+***\*A) Failing to Meet Initial Plan and/or Deadlines:\****
+
+\- First Occurrence: The team member must provide a valid reason for the delay and propose 	a revised deadline. The team will then discuss and agree upon the revised deadline.
+
+\- Repeated Occurrences: The team shall have a meeting to understand the root cause of the 	repeated delays. If necessary, responsibilities may be redistributed. Continued failure may 	lead to escalation to the project supervisor or faculty.
+
+***\*B) Reaching Consensus during Disagreements:\****
+
+\- Open Discussion: Allow each team member to express their viewpoint without 	interruption.
+
+\- Vote: If consensus can't be reached through discussion, a vote shall be taken. Majority will 	decide the outcome.
+
+\- Mediator: If the conflict persists, a neutral third party or team mentor can be brought in to 	mediate the discussion.
+
+***\*C) Member Illness or Unforeseen Absence:\****
+
+\- Immediate Notification: If a team member knows they will be absent, they should notify 	the team as soon as possible.
+
+\- Redistribution of Tasks: The team will meet to discuss the redistribution of tasks to ensure 	that the project remains on track.
+
+\- Contingency Plan: Each team member should have a secondary person familiar with their 	tasks to ensure a smoother transition of duties in case of sudden absences.
+
+***\*D) Mitigation of Unforeseen Incidents:\****
+
+\- Regular Check-ins: Hold brief daily or bi-weekly check-ins to update the team on progress 	and address any potential issues.
+
+\- Backup Plans: Always have a "Plan B" for critical project components. This might involve 	having backup resources, alternative methods, or secondary timelines.
+
+\- Documentation: Ensure all work is well-documented. This will aid any team member in 	picking up where another left off, if needed.
