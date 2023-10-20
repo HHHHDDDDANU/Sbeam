@@ -22,7 +22,7 @@
 | *UID*    | *Name* | *Role*                           |
 | -------- | -------------- | ---------------------------------------- |
 | U7574421 | Simon Fu       | Overall UI design and Firebase integrate |
-|          |                |                                          |
+| U7544341 | Zehua Liu      | Program Developer (Search)               |
 |          |                |                                          |
 |          |                |                                          |
 
@@ -60,6 +60,21 @@
   - **Data Structure**: ArrayList.
 
 
+
+**C)** **U7544341, Zehua Liu**
+
+- **Code contribution in the final app**
+  - **Search Feature Design** - Class: Tokenizer.Java, Class: GameListFragment.java Method: SetOnClickListener()
+  - **Invalid Input Search Feature Design** - Class: Tokenizer.Java, Class: GameListFragment.java Method: SetOnClickListener()
+  - **AVLTree modification** - Class: AVLTree.java, Method: inOrderToList
+
+* **Others**
+  - **Game Data Detail**: Search for 500+ game images for 250+ games manually.
+  - **Firebase**: Import 500+ game images for 250+ games to Firebase Realtime Database manually.
+
+- **Code and App Design**
+
+  - **Data Structure**: ArrayList, AVLTree.
 
 # **Application Description**
 
@@ -156,13 +171,40 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 
 \- This is implemented by reading data from firebase database and load it into the game list 	RecyclerView.
 
+**4.** **[Search]**. Enable user to search (filter) for games under differnt condition
+
+\- Code: Tokenizer.java, GameListFragment.java
+
+\- Users can use the following similar grammar to search games: “gameName; price > XX; year> XX”.
+
+\- Use ";" to separate searching conditions.
+
+\- The searching conditions can be in any orders.
+
+\- Tokenizer are used for search features.
+
+\- This is implemented by reading data from game list (AVLTree for search including "price" and Arraylist for others).
+
  
 
 ### Custom Feature:
 
+**Feature Category: Search-related Features**
+
+**1.** **[Search-Invalid]**. On top of giving search results from valid inputs, search functionality can process and
+correctly handle partially invalid search queries and give meaningful results.(medium)
+
+- Code: Tokenizer.java, GameListFragment.java
+- User can enter invalid search text, the Tokenizer will compare each token with valid patterns, dismiss the invalid token, and prevent bugs or app crash.
+
+**2.** **[Search-Filter]**. Sort and filter a list of items returned from searches, with the use of suitable UI components.(easy)
+
+- Code: 
+- There are a filter button besides the searching textfield. One could filter, sort, and rank their searching result by price/name before or after searching.
+
 **Feature Category: UI Design and Testing**
 
-**1.** **[UI-Layout]**. Incorporate suitable UI layout in the tab for different activities and fragments.(easy)
+**3.** **[UI-Layout]**. Incorporate suitable UI layout in the tab for different activities and fragments.(easy)
 
 - Code: All XML layout files.
 - This is implemented by modifying the drawable in UI, for example, use a custom item layout for recycler view. Adapt tab view in login UI and main interface by combining tablayout and pagerviewer2.
@@ -171,7 +213,7 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 
 **Feature Category: Greater Data Usage, Handling and Sophistication**
 
-**2.** **[Data-Profile]**. Create a Profile Page for Users or any Entities.(easy)
+**4.** **[Data-Profile]**. Create a Profile Page for Users or any Entities.(easy)
 
 - Code: ProfileFragment.java.
 
@@ -181,13 +223,13 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 
 **Feature Category: Firebase Integration**
 
-**3.** **[FB-Auth]**. Use Firebase to implement User Authentication.(easy)
+**5.** **[FB-Auth]**. Use Firebase to implement User Authentication.(easy)
 
 - Code: LoginFragment.java.
 
 - User login is implemented by using firebase auth, all users’ password and email are stored in fire base.
 
-**4.** **[FB-Persist]**.Use Firebase to persist all data used in your app.(medium)
+**6.** **[FB-Persist]**.Use Firebase to persist all data used in your app.(medium)
 
 - All data related to this app is stored in firebase database, including all the game objects, all users’ data and chat logs. The data in app is also updated synchronously as firebase data change, this can be achieved by calling onDataChange() method.
 
@@ -195,7 +237,7 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 
 **Feature Category: User Interactivity**
 
-**5.** **[Interact-Micro]** The ability to micro-interact with items/users.(easy)
+**7.** **[Interact-Micro]** The ability to micro-interact with items/users.(easy)
 
 - Code: FriendListActivity.java, GameDetail.java
 
@@ -205,12 +247,12 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 
 **Feature Category: Peer to Peer Messaging**
 
-**6.[P2P-DM]** Provide users with the ability to message each other directly in private. (hard)
+**8.[P2P-DM]** Provide users with the ability to message each other directly in private. (hard)
 
 - Code: ChatActivity.java, ChatAdapter.java, ChatMessage
 - Allow user to chat with another user in real time.
 
-**7.[P2P-Block]** Provide users with the ability to ‘block’ and prevent another user from direct messaging them.(medium)
+**9.[P2P-Block]** Provide users with the ability to ‘block’ and prevent another user from direct messaging them.(medium)
 
 - Code: FriendsListActivity.java, FriendsListAdapter
 - User can add new friends or remove current friends from his friend list.
