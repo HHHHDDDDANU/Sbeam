@@ -110,6 +110,41 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 
 #  **Code Design and Decision**
 
+- **Parser**
+  - **Grammar**
+    - **Design:** The primary grammar is designed to interpret user input criteria, which consists of year or price constraints or game names. The structure is based on a semi-colon-separated list of tokens, each describing a specific constraint.
+    - **Advantages:**
+      - **Simplicity:** The grammar is kept simple for ease of use and understanding.
+      - **Flexibility:** The design can easily accommodate future extensions or modifications.
+      - **Simplicity:** The grammar is kept simple for ease of use and understanding.
+      - **User Experience:** The grammar allows users to specify multiple criteria in one input, enhancing search functionality.
+    - **Grammar 1 - Year or Price Constraint:** `keyword operator value`
+      - **Examples: year=2022, price<50**
+    - **Grammar 2 - Name Constraint:** `name`
+      - **Example: Super Mario**
+    - **Production Rules:**
+      - `<Constraint> ::= <YearConstraint> | <PriceConstraint> | <NameConstraint>` (in any order)
+      - `<YearConstraint> ::= 'year' <Operator> <Value>`
+      - `<PriceConstraint> ::= 'price' <Operator> <Value>`
+      - `<NameConstraint> ::= <Name>`
+      - `<Operator> ::= '=' | '<' | '>'`
+      - `<Value> ::= 'digit'+` // (one or more digits)
+      - `<Name> ::= 'letter'+` // (one or more letters)
+  - **Tokenizers and Parsers**
+    - **Usage**:
+        - We use tokenisers in the `Tokenizer` class to split the user's input by `;`.
+        - Parsers then identify whether the token is about year, price, or a game name using Java's regex.
+
+    - **Build**:
+        - The `StringTokenizer` class divides the input string.
+        - Java's regex `Pattern` matches tokens to our grammar.
+
+    - **Advantages**:
+        - **Flexibility**: Handles multiple criteria in one input.
+        - **Efficiency**: Uses Java's native classes for fast processing.
+        - **Precision**: Accurate matches with custom grammar.
+        - **Error Handling**: Flags for error detection.
+
 - **Data Structures**
 
   - **AVL Tree**
