@@ -104,7 +104,7 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 
 # **Application UML**
 
-![img](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/App_Structure_Diagram.png) 
+![img](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/raw/main/items/App_Structure_Diagram.png?inline=false) 
 
 ​	(The full image of UML diagram can be found in gitlab repository)
 
