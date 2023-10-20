@@ -30,7 +30,7 @@
 
 # **Summary of individual contributions**
 
-**A)** **U7574421, Simon Fu**
+**A)** **U7574421, Simon Fu** - I have 29% contribution, as follows:
 
 - **Code contribution in the final app**
   - **Base class design** - Class User: User.java, Class Game: Game.java
@@ -49,7 +49,7 @@
   - **Report Writing**: Organize report structure and write non-individual part of report, including 	UML diagram, application description, and conflict resolution protocol.
   - **Feature Video**: Record the features video.
 
-**B)** **U7618768, Connor Li**
+**B)** **U7618768, Connor Li** - I have 24% contribution, as follows:
 
 - **Code contribution in the final app**
   - **Friends list degisn** - Class: FriendsListActivity.java, FriendsListAdapter.java.
@@ -63,7 +63,7 @@
 
 
 
-**C)** **U7544341, Zehua Liu**
+**C)** **U7544341, Zehua Liu** - I have 24% contribution, as follows:
 
 - **Code contribution in the final app**
   - **Search Feature Design** - Class: Tokenizer.Java, Class: GameListFragment.java Method: SetOnClickListener()
@@ -78,7 +78,7 @@
 
   - **Data Structure**: ArrayList, AVLTree.
 
-**D)** **U7587847, Yongsong Xiao**
+**D)** **U7587847, Yongsong Xiao** - I have 23% contribution, as follows:
 
 - **Code contribution in the final app**
   - **TestUI** - Class: MainInterfaceTest.java,ResetTest,SignActivityTest、
@@ -250,7 +250,7 @@ correctly handle partially invalid search queries and give meaningful results.(m
 
 **2.** **[Search-Filter]**. Sort and filter a list of items returned from searches, with the use of suitable UI components.(easy)
 
-- Code: 
+- Code: GameListFragment.java
 - There are a filter button besides the searching textfield. One could filter, sort, and rank their searching result by price/name before or after searching.
 
 **Feature Category: UI Design and Testing**
