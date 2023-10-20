@@ -24,7 +24,7 @@
 | U7574421 | Simon Fu       | Overall UI design and Firebase integrate |
 | U7544341 | Zehua Liu      | Program Developer (Search)               |
 | U7618768 | Connor Li      | Friends list and P2P message             |
-|          |                |                                          |
+| U7587847 | Yongsong Xiao  | Test basic UI and foundation             |
 
  
 
@@ -77,6 +77,20 @@
 - **Code and App Design**
 
   - **Data Structure**: ArrayList, AVLTree.
+
+**D)** **U7587847, Yongsong Xiao**
+
+- **Code contribution in the final app**
+  - **TestUI** - Class: MainInterfaceTest.java,ResetTest,SignActivityTest、
+  - **FoundationTest** - Class: TokenizerTest
+ 
+- **Code and App Design**
+
+  - **Data Structure**: ArrayList.
+ 
+
+
+
 
 # **Application Description**
 
