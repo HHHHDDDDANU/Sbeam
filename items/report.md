@@ -325,8 +325,9 @@ correctly handle partially invalid search queries and give meaningful results.(m
 
 ### Testing Summary
 
-*[We tested several feactures which contain login、resetPassport、Sign、some Ui controls and Tockenizers. Our tests include using espresso to simulate user operations on the app to implement functions such as login, resetPassport, and Sign, to determine whether the interface entered and the returned results meet user expectations. We also test some Ui controls to ensure that users do what they need to do when using these controls. To ensure that it is smooth and does not crash, the Tokenizer was finally tested and returned the expected value in a variety of different cases to ensure that users can get good feedback and experience when using it.]*
-*Please provide some screenshots of your testing summary, showing the achieved testing coverage. Feel free to provide further details on your tests.*
+*We tested several feactures which contain login、resetPassport、Sign、some Ui controls and Tockenizers. Our tests include using espresso to simulate user operations on the app to implement functions such as login, resetPassport, and Sign, to determine whether the interface entered and the returned results meet user expectations. We also test some Ui controls to ensure that users do what they need to do when using these controls. To ensure that it is smooth and does not crash, the Tokenizer was finally tested and returned the expected value in a variety of different cases to ensure that users can get good feedback and experience when using it.*
+
+
 
 
 
@@ -337,7 +338,7 @@ correctly handle partially invalid search queries and give meaningful results.(m
    - *The test type is Activity. Use espresso to simulate a user using a given password to test whether they can successfully log in to the interface.*
 
 2. Tests for ResetPassword
- - Code: [ResetTest Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/ResetTest.java) for the [resetPassport Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/ResetPassword.java)
+    - Code: [ResetTest Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/ResetTest.java) for the [resetPassport Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/ResetPassword.java)
    - *Number of test cases: 1*
    - *Code coverage: If user could login reset passwords interface successfully*
    - *The test type is Activity. Use espresso to simulate a user login in reset password interface and test if is it right*
@@ -345,14 +346,14 @@ correctly handle partially invalid search queries and give meaningful results.(m
 ...
 
 3. Tests for MainInterface
- - Code: [MainInterfaceTest Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/MainInterfaceTest.java) for the [MainInterface Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/MainInterface.java)
+    - Code: [MainInterfaceTest Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/MainInterfaceTest.java) for the [MainInterface Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/MainInterface.java)
    - *Number of test cases: 5*
    - *Code coverage: If every fragments and controls are right in MainInterface*
    - *The test type is Activity. This test mainly uses espresso to test whether the various parts of the main interface are properly designed. Specifically, it tests whether the menu displays three options, and the three options are reasonably positioned and whether they are three options. The menu is slid to ensure that everything goes smoothly. Enter the designated menu.*
 
 
 4. Tests for Tokenizer
- - Code: [TokenizerTest Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/TokenizerTest.java) for the [MainInterface Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Tokenizer.java)
+    - Code: [TokenizerTest Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/TokenizerTest.java) for the [MainInterface Class, entire file](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Tokenizer.java)
    - *Number of test cases: 10*
    - *Code coverage: If tokenizer could work well*
    - *This test mainly uses ten different situations to simulate the characters entered by the user to determine whether they match the characters parsed by the tokenizer.*
