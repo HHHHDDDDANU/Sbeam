@@ -55,9 +55,11 @@
   - **Friends list degisn** - Class: FriendsListActivity.java, FriendsListAdapter.java.
   - **Peer to peer chat function design** - Class: ChatMessage.java, ChatActivity.java, ChatAdapter.java.
   - **AVLTree degisn** - Class: AVLTree.java.
+  
 - **Code and App Design**
   - **Design Pattern**: Observer, Adapter.
   - **Data Structure**: ArrayList.
+  - **UI Design**: Design UI for friendslist, Friend information and status display and Chat interface
 
 
 
