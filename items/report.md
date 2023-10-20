@@ -236,10 +236,10 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 
  
 
-- *[Team Meeting 1](meeting1.md)*
-- ...
-- ...
-- [Team Meeting 4](link_to_md_file.md)
+- [Team Meeting 1](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/meeting%201.md)
+- [Team Meeting 2](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/meeting%202.md)
+- [Team Meeting 3](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/meeting%203.md)
+- [Team Meeting 4](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/meeting%204.md)
 
 <hr>
 
