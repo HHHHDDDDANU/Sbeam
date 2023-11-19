@@ -86,7 +86,9 @@
 **D)** **U7587847, Yongsong Xiao** - I have 23% contribution, as follows:
 
 - **Code contribution in the final app**
-  - **TestUI** - Class MainInterfaceTest.java: [MainInterfaceTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/MainInterfaceTest.java), Class ResetTest.java:   [ResetTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/ResetTest.java), Class SignActivityTest.java: [SignActivityTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/SignActivityTest.java) 、
+  - **TestUI** - Class MainInterfaceTest.java: [MainInterfaceTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/MainInterfaceTest.java), Class ResetTest.java:   [ResetTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/ResetTest.java), Class SignActivityTest.java: [SignActivityTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/SignActivityTest.java) 
+
+
   - **FoundationTest** - Class: TokenizerTest.java: [TokenizerTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/TokenizerTest.java)
 
 
@@ -285,6 +287,8 @@ correctly handle partially invalid search queries and give meaningful results.(m
 
 - Code: All XML layout files.
 - This is implemented by modifying the drawable in UI, for example, use a custom item layout for recycler view. Adapt tab view in login UI and main interface by combining tablayout and pagerviewer2.
+- Test Code: Class MainInterfaceTest.java: [MainInterfaceTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/MainInterfaceTest.java), Class ResetTest.java:   [ResetTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/ResetTest.java), Class SignActivityTest.java: [SignActivityTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/SignActivityTest.java) 
+- For some controls on the UI interface, simulate whether the user enters a specific interface after clicking the operation or meets the expected results.
 
 
 
