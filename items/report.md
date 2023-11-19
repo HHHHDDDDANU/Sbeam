@@ -281,14 +281,20 @@ correctly handle partially invalid search queries and give meaningful results.(m
 - Code: [GameListFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java#L59-84)
 - There are a filter button besides the searching textfield. One could filter, sort, and rank their searching result by price/name before or after searching.
 
-**Feature Category: UI Design and Testing**
+**Feature Category: UI Design**
 
 **3.** **[UI-Layout]**. Incorporate suitable UI layout in the tab for different activities and fragments.(easy)
 
 - Code: All XML layout files.
 - This is implemented by modifying the drawable in UI, for example, use a custom item layout for recycler view. Adapt tab view in login UI and main interface by combining tablayout and pagerviewer2.
+
+
+**Feature Category: UI-Test**
+Complete UI tests using espresso (not covered in lectures/labs) tests the main interface and controls of the App. (hard)
+
 - Test Code: Class MainInterfaceTest.java: [MainInterfaceTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/MainInterfaceTest.java), Class ResetTest.java:   [ResetTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/ResetTest.java), Class SignActivityTest.java: [SignActivityTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/SignActivityTest.java) 
 - For some controls on the UI interface, simulate whether the user enters a specific interface after clicking the operation or meets the expected results.
+
 
 
 
