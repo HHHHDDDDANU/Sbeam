@@ -52,14 +52,14 @@
 **B)** **U7618768, Connor Li** - I have 24% contribution, as follows:
 
 - **Code contribution in the final app**
-  - **Friends list degisn** - Class: FriendsListActivity.java, FriendsListAdapter.java.
-  - **Peer to peer chat function design** - Class: ChatMessage.java, ChatActivity.java, ChatAdapter.java.
-  - **AVLTree degisn** - Class: AVLTree.java.
+  - **Friends list degisn** - Class: [FriendsListActivity.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListActivity.java), [FriendsListAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListAdapter.java).
+  - **Peer to peer chat function design** - Class: [ChatMessage.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/ChatMessage.java), [ChatActivity.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/ChatActivity.java), [ChatAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/ChatAdapter.java).
+  - **AVLTree degisn** - Class: [AVLTree.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/AVLTree.java).
   
 - **Code and App Design**
-  - **Design Pattern**: Observer, Adapter.
+  - **Design Pattern**: Observer, Adapter([ChatAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/ChatAdapter.java), [FriendsListAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListAdapter.java)).
   - **Data Structure**: ArrayList.
-  - **UI Design**: Design UI for friendslist, Friend information and status display and Chat interface
+  - **UI Design**: Design UI for friendslist ([activity_friends_list.xml](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/res/layout/activity_friends_list.xml), [friends_list_item.xml](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/res/layout/friends_list_item.xml)), Friend information, status display ([FriendsListAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListAdapter.java), [LoginFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/LoginFragment.java#L63), [ProfileFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Profile/ProfileFragment.java#L148))  and Chat interface ([activity_chat.xml](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/res/layout/activity_chat.xml), [chat_log_receive_item.xml](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/res/layout/chat_log_receive_item.xml), [chat_log_send_item.xml](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/res/layout/chat_log_send_item.xml)).
 
 
 
@@ -332,12 +332,12 @@ correctly handle partially invalid search queries and give meaningful results.(m
 
 **8.[P2P-DM]** Provide users with the ability to message each other directly in private. (hard)
 
-- Code: ChatActivity.java, ChatAdapter.java, ChatMessage
+- Code: [ChatActivity.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/ChatActivity.java), [ChatAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/ChatAdapter.java), [ChatMessage](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/ChatMessage.java)
 - Allow user to chat with another user in real time.
 
 **9.[P2P-Block]** Provide users with the ability to ‘block’ and prevent another user from direct messaging them.(medium)
 
-- Code: FriendsListActivity.java, FriendsListAdapter
+- Code: [FriendsListActivity.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListActivity.java), [FriendsListAdapter](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListAdapter.java).
 - User can add new friends or remove current friends from his friend list.
 
  
@@ -352,7 +352,7 @@ correctly handle partially invalid search queries and give meaningful results.(m
 
  **2.[Interact-States]** Users can change their account status, and users can see the status of their friends in the friends list.
 
-- Code: FriendsListActivity.java
+- Code: [FriendsListAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListAdapter.java#L73), [LoginFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/LoginFragment.java#L63), [ProfileFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Profile/ProfileFragment.java#L148)
 - After logging in,the status of user is set to "online", other user can see the status through friends list.
 
 ### Testing Summary
