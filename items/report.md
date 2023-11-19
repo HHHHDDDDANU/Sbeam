@@ -337,7 +337,7 @@ correctly handle partially invalid search queries and give meaningful results.(m
 
 **9.[P2P-Block]** Provide users with the ability to ‘block’ and prevent another user from direct messaging them.(medium)
 
-- Code: [FriendsListActivity.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListActivity.java), [FriendsListAdapter](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListAdapter.java).
+- Code: [FriendsListActivity.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListActivity.java), [FriendsListAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/FriendsListAdapter.java#L95).
 - User can add new friends or remove current friends from his friend list.
 
  
