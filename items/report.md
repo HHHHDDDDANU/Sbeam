@@ -90,7 +90,7 @@
 
 * **Others**
   - **Presentation**: Responsible for completing the production of PPT
-  -**Meetings**: Recording and sorting of meeting summaries
+  - **Meetings**: Recording and sorting of meeting summaries
 
  
 - **Code and App Design**
