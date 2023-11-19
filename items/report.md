@@ -291,7 +291,7 @@ correctly handle partially invalid search queries and give meaningful results.(m
 
 **Feature Category: UI-Test**
 
-** ** **Complete UI tests using espresso (not covered in lectures/labs) tests the main interface and controls of the App. (hard)
+Complete UI tests using espresso (not covered in lectures/labs) tests the main interface and controls of the App. (hard)
 
 - Test Code: Class MainInterfaceTest.java: [MainInterfaceTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/MainInterfaceTest.java), Class ResetTest.java:   [ResetTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/ResetTest.java), Class SignActivityTest.java: [SignActivityTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/SignActivityTest.java) 
 - For some controls on the UI interface, simulate whether the user enters a specific interface after clicking the operation or meets the expected results.
