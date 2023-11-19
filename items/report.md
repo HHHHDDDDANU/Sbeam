@@ -33,7 +33,7 @@
 **A)** **U7574421, Simon Fu** - I have 29% contribution, as follows:
 
 - **Code contribution in the final app**
-  - **Base class design** - Class User: User.java, Class Game: Game.java
+  - **Base class design** - Class User: [User.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/User.java), Class Game: Game.java
   - **Login and sign up design** - Class SignActivity: SignActivity.java, Class LoginFragment:LoginFragent.java, Class SignupFragment: SignupFragment.java, Class SignInAdapter: SignInAdapter.java.
   - **Firebase database integration**
   - **Library, game list and profile design** - Class MyLibrary: MyLibrary.java, Class MyWishlist:MyWishlist.java, Class LibraryListAdapter: LibraryListAdapter.java, Class ProfileFragment: ProfileFragment.java.
