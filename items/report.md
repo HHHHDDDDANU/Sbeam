@@ -37,17 +37,17 @@
   - **Login and sign up design** - Class SignActivity: [SignActivity.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/SignActivity.java), Class LoginFragment:[LoginFragent.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/LoginFragment.java), Class SignupFragment: [SignupFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/SignupFragment.java), Class SignInAdapter: [SignInAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/SignInAdapter.java).
   - **[Firebase database integration](https://console.firebase.google.com/project/comp6442database/overview)**
   - **Library, game list and profile design** - Class MyLibrary: [MyLibrary.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/MyLibrary.java), Class MyWishlist:[MyWishlist.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/MyWishlist.java), Class LibraryListAdapter: [LibraryListAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/LibraryListAdapter.java), Class ProfileFragment: [ProfileFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Profile/ProfileFragment.java).
+  - **News design** - Class NewsFragment: [NewsFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/News/NewsFragment.java), Class NewsGameAdapter: [NewsGameAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/News/NewsGameAdapter.java)
 
 - **Code and App Design**
 
   - **Data Structure**: Arraylist.
-
   - **Design pattern**: Singleton, Observer and Adapter([SignInAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/SignInAdapter.java), [LibraryListAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/LibraryListAdapter.java), [MenuAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/MenuAdapter.java), [NewsGameAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/News/NewsGameAdapter.java), [GameListAdapter](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListAdapter.java)).
-  - **UI Design**: Design UI for [main interface](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/MainInterface.java), [login](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/LoginFragment.java) and [signup](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/SignupFragment.java) interface, [news](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/News/NewsFragment.java), [game detail](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameDetail.java), [game 	list](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java) ,[library](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/MyLibrary.java), [wishlist](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/MyWishlist.java) and [profile](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Profile/ProfileFragment.java).
-
+  - **Overall UI Design**: Design UI for [main interface](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/MainInterface.java), [login](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/LoginFragment.java) and [signup](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/SignupFragment.java) , [news](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/News/NewsFragment.java), [game detail](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameDetail.java), [game 	list](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java) ,[library](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/MyLibrary.java), [wishlist](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/MyWishlist.java) and [profile](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Profile/ProfileFragment.java).
+  - **App Structure and UML Design**: Design the skeleton and strucute of the whole app, and the [UML diagram](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/App_Structure_Diagram.png).
 * **Others**
   - **Report Writing**: Organize report structure and write non-individual part of report, including 	UML diagram, application description, and conflict resolution protocol.
-  - **Feature Video**: Record the features video.
+  - **Feature Video**: Record the [features video](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/features.mp4).
 
 **B)** **U7618768, Connor Li** - I have 24% contribution, as follows:
 
@@ -84,14 +84,8 @@
 **D)** **U7587847, Yongsong Xiao** - I have 23% contribution, as follows:
 
 - **Code contribution in the final app**
-  - **TestUI** - Class MainInterfaceTest.java: [MainInterfaceTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/MainInterfaceTest.java), Class ResetTest.java:   [ResetTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/ResetTest.java), Class SignActivityTest.java: [SignActivityTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/SignActivityTest.java) 、
-  - **FoundationTest** - Class: TokenizerTest.java: [TokenizerTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/TokenizerTest.java)
-
-
-* **Others**
-  - **Presentation**: Responsible for completing the production of PPT
-  - **Meetings**: Recording and sorting of meeting summaries
-
+  - **TestUI** - Class: MainInterfaceTest.java,ResetTest,SignActivityTest、
+  - **FoundationTest** - Class: TokenizerTest
  
 - **Code and App Design**
 
@@ -195,11 +189,15 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
       - The integration between ArrayList and `recyclerView` in Android facilitates a seamless experience in displaying chat messages. The data structure's design is inherently suitable for binding with Android's UI components, making the visualization process straightforward and efficient.
 
 - **Design Patterns**
-  - **Singleton**: Singleton is used to store the global variables include current user, game list, recommended game and new released game. We choose to use singleton because these variable should be keep same across the whole app, and should be able to be accessed through anywhere in the app.
+  - **Singleton**: Singleton is used to store the global variables include current user, game list, recommended game and new released game. The database used to store all the data is considered as a singleton instance. We choose to use singleton because these variable should be keep same across the whole app, and should be able to be accessed through anywhere in the app.
+  \- Location: [GameListFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java#L92), [ProfileFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Profile/ProfileFragment.java#L66), [MyLibrary.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/MyLibrary.java#L45), [MyWishlist.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/MyWishlist.java#L45)
+  \- Reasons: There should be only one instance of all the data, such as games and user information. All the data are acquired from the singleton instance to avoid confusion.
   - **Observer**: Observer is used to notify all components in this app when there is a data change in firebase database. It is used because we need to keep all the data in the app consistently.
   \- Location: [GameListFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java#L69), [ChatActiviy.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/ChatActivity.java#L73)
+  \- Reasons: Observer is adopted in order to keep the data consistent, when there is a data change somewhere in the code, all other parts needs to be notified about this change.
   -  **Adapter**: Adapter is used in game list tab, library, wishlist and chat. It fits the object and RecyclerView together so that RecyclerView can display objects in different format.
   \- Location: Basically all classes named with adapter.([SignInAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LoginAndSignup/SignInAdapter.java), [LibraryListAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/LibraryAndWishlist/LibraryListAdapter.java), [MenuAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/MenuAdapter.java), [NewsGameAdapter.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/News/NewsGameAdapter.java), [GameListAdapter](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListAdapter.java))
+  \- Reasons: Adapter is used to fit the data and UI components together, making sure that data are displayed appropriately.
 
  
 
@@ -227,7 +225,7 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 
 \- Each game in DataFiles contains its name, type, year, producer, a short description, picture 	URL and price.
 
-\- This is implemented by using Firebase database.
+\- This is implemented by using [Firebase database](https://console.firebase.google.com/project/comp6442database/database/comp6442database-default-rtdb/data).
 
 **3.** **[LoadShowData]**. All game are loaded when enter game list tab.
 
@@ -236,6 +234,8 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 \- A list of game will be loaded to the game list RecyclerView in game list tab.
 
 \- This is implemented by reading data from firebase database and load it into the game list	RecyclerView.
+
+\- When the there is a data change happened, the data loaded would also be updatad.
 
 **4.** **[Search]**. Enable user to search (filter) for games under different condition
 
@@ -296,6 +296,8 @@ correctly handle partially invalid search queries and give meaningful results.(m
 - User login is implemented by using firebase auth, all users’ password and email are stored in fire base.
 
 **6.** **[FB-Persist]**.Use Firebase to persist all data used in your app.(medium)
+
+- Code: [GameListFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java#L92-102), [ProfileFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Profile/ProfileFragment.java#L65-119), [ChatActivity.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/ChatActivity.java#L105-120)
 
 - All data related to this app is stored in firebase database, including all the game objects, all users’ data and chat logs. The data in app is also updated synchronously as firebase data change, this can be achieved by calling onDataChange() method.
 
