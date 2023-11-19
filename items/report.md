@@ -84,8 +84,14 @@
 **D)** **U7587847, Yongsong Xiao** - I have 23% contribution, as follows:
 
 - **Code contribution in the final app**
-  - **TestUI** - Class: MainInterfaceTest.java,ResetTest,SignActivityTest、
-  - **FoundationTest** - Class: TokenizerTest
+  - **TestUI** - Class MainInterfaceTest.java: [MainInterfaceTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/MainInterfaceTest.java), Class ResetTest.java:   [ResetTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/ResetTest.java), Class SignActivityTest.java: [SignActivityTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/SignActivityTest.java) 、
+  - **FoundationTest** - Class: TokenizerTest.java: [TokenizerTest.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/androidTest/java/com/example/myapplication/TokenizerTest.java)
+
+
+* **Others**
+  - **Presentation**: Responsible for completing the production of PPT
+  -**Meetings**: Recording and sorting of meeting summaries
+
  
 - **Code and App Design**
 
