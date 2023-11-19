@@ -66,14 +66,17 @@
 **C)** **U7544341, Zehua Liu** - I have 24% contribution, as follows:
 
 - **Code contribution in the final app**
-  - **Search Feature Design** - Class: Tokenizer.Java, Class: GameListFragment.java Method: SetOnClickListener()
-  - **Invalid Input Search Feature Design** - Class: Tokenizer.Java, Class: GameListFragment.java Method: SetOnClickListener()
-  - **AVLTree modification** - Class: AVLTree.java, Method: inOrderToList
+  - **Search Feature Design** - Class Tokenizer: [Tokenizer.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Tokenizer.java), Class GameListFragment: [GameListFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java#L111-170) (Method: SetOnClickListener())
+  - **Invalid Input Search Feature Design** - Class Tokenizer: [Tokenizer.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Tokenizer.java), Class GameListFragment: [GameListFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java#L111-170) (Method: SetOnClickListener())
+  - **Modification of AVLTree** - Class AVLTree: [AVLTree.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/AVLTree.java#L189-245) (Method: inOrderToList(), inOrderToList())
+  - **Use of AVLTree** - refer to data structure part.
 
 * **Others**
-  - **Game Data Detail**: Search for 500+ game images for 250+ games manually.
-  - **Firebase**: Import 500+ game images for 250+ games to Firebase Realtime Database manually.
-
+  - **(Json File) Game Data**: Created and modified gameData (Data moved to firebase later) [data.json](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/commit/ecad8aa278ea716d0172f720872b087d62a7aba9#7192d8aaea896a7b9856b97f2c50cc93eca68b6c)
+  - **Game Data Detail**: Search for 500+ game images of 250+ games manually.
+  - **Firebase**: Import 500+ game images for 250+ games to Firebase Realtime Database manually. ([Firebase Realtime Database](https://console.firebase.google.com/project/comp6442database/database/comp6442database-default-rtdb/data?hl=zh-cn)) (500+ links for "url" and "url_l" component for each game)
+  - **Minute Madness Presentation**: All part of Minute Madness Presentation.
+  - **Progress Oversight and Communication**: Responsible for overseeing the overall progress of the group, developing ideas in meeting and communication among team members as well as with the tutor.
 - **Code and App Design**
 
   - **Data Structure**: ArrayList, AVLTree.
@@ -173,6 +176,10 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
       - Given that we used the game's price as the key, an AVL tree ensures that searches based on price are faster, allowing users to quickly find games within their budget.
       - The nature of AVL trees automatically balancing themselves means that we avoid worst-case scenarios, ensuring consistent performance.
 
+    - **Use of AVLTree:**
+        - insert: insert game data to AVLTree. ([insert](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java#L95-102))
+        - use: If searching conditions contatin "price", filtering by "price" first by using the AVLTree we just created. ([use](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java#L137))
+
   - **ArrayList**
 
     - **Objective:** Adopted for storing chat records in our app. Considering chat messages are inherently sequential and orderly, ArrayList perfectly aligns with this requirement. Furthermore, its compatibility with RecycerView aids in the visualization of chat records.
@@ -224,11 +231,11 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 
 \- This is implemented by reading data from firebase database and load it into the game list	RecyclerView.
 
-**4.** **[Search]**. Enable user to search (filter) for games under differnt condition
+**4.** **[Search]**. Enable user to search (filter) for games under different condition
 
-\- Code: Tokenizer.java, GameListFragment.java
+\- Code: [Tokenizer.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Tokenizer.java), [GameListFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java#L111-170) 
 
-\- Users can use the following similar grammar to search games: “gameName; price > XX; year> XX”.
+\- Users can use the following similar grammar to search games: “gameName; price > XX; year> XX”. User can choose to use compound statement or single condition to search.
 
 \- Use ";" to separate searching conditions.
 
@@ -247,7 +254,7 @@ Let’s say Gabe want to buy a new released game and talk about this with his fr
 **1.** **[Search-Invalid]**. On top of giving search results from valid inputs, search functionality can process and
 correctly handle partially invalid search queries and give meaningful results.(medium)
 
-- Code: Tokenizer.java, GameListFragment.java
+\- Code: [Tokenizer.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/Tokenizer.java#L32-71), [GameListFragment.java](https://gitlab.cecs.anu.edu.au/u7618768/ga-23s2/-/blob/main/items/app/app/src/main/java/com/example/myapplication/GameList/GameListFragment.java#L123-130) 
 - User can enter invalid search text, the Tokenizer will compare each token with valid patterns, dismiss the invalid token, and prevent bugs or app crash.
 
 **2.** **[Search-Filter]**. Sort and filter a list of items returned from searches, with the use of suitable UI components.(easy)
